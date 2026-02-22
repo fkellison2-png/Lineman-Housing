@@ -527,17 +527,6 @@
         }
   
 
-.tour-content {
-    background: white;
-    margin: 5% auto;
-    padding: 20px;
-    width: auto;
-    max-width: 90%;
-    border-radius: 10px;
-    position: relative;
-    display: inline-block;
-}
-
 
 
 
@@ -551,12 +540,7 @@
 
 
 
-.slideshow img {
-    display: none;
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
+
 
     
     </style>
@@ -611,59 +595,11 @@
             <div class="section-title">
                 <h2>Available Units</h2>
                 <p>Located at 1134 14th Street, our property features multiple fully-furnished units perfect for individual professionals or teams.</p><br>
-<a href="#" class="cta-button virtual-tour-btn" data-tour="tour1">Virtual Tour</a>
-
-
-            </div>
-            
-           <div id="tour1" class="tour-modal">
-  <div class="tour-content">
-    <span class="close">&times;</span>
-
-    <div class="slideshow">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/1551%20kit%20fridge.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/1551%20kit%20sink.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20big%20tub.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20blue%20bed.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20burg%20bed.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20front%20home.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20kit%20sink.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20lv%20rm.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20master%20vanity.jpg">
-      <img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/oro%20dam%20tv.jpg">
-    </div>
-  </div>
-</div>
 
 
 
-<script>
-document.querySelectorAll('.virtual-tour-btn').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const tourId = btn.getAttribute('data-tour');
-    document.getElementById(tourId).style.display = 'block';
-  });
-});
 
-document.querySelectorAll('.close').forEach(closeBtn => {
-  closeBtn.addEventListener('click', () => {
-    closeBtn.closest('.tour-modal').style.display = 'none';
-  });
-});
 
-// Simple slideshow rotation
-document.querySelectorAll('.slideshow').forEach(show => {
-  let index = 0;
-  const images = show.querySelectorAll('img');
-
-  setInterval(() => {
-    images[index].style.display = 'none';
-    index = (index + 1) % images.length;
-    images[index].style.display = 'block';
-  }, 3000);
-});
-</script>
             <div class="property-grid">
 
                 <!-- Front House -->
