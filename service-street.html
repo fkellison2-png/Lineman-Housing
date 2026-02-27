@@ -524,6 +524,54 @@ max-width: 300px;
 text-align: center;
 }
 }
+
+/* ----- VIRTUAL TOUR BUTTON STYLES (visible & placed as requested) ----- */
+.virtual-tour-wrapper {
+text-align: center;
+margin: 2rem 0 2rem 0; /* space above property cards */
+}
+.virtual-tour-btn {
+display: inline-flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+background: linear-gradient(145deg, #0f2b4d, #1f4b6e);
+color: white;
+font-size: 1.3rem;
+font-weight: 600;
+padding: 1rem 3rem;
+border-radius: 60px;
+text-decoration: none;
+box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 0 0 2px rgba(56,178,172,0.5);
+transition: all 0.3s ease;
+border: 2px solid var(--accent);
+letter-spacing: 0.5px;
+}
+.virtual-tour-btn i {
+font-size: 1.8rem;
+color: #ffd966;
+text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+.virtual-tour-btn:hover {
+background: linear-gradient(145deg, #143b5e, #2b628b);
+transform: scale(1.03) translateY(-4px);
+box-shadow: 0 18px 30px rgba(0,0,0,0.3), 0 0 0 3px var(--accent);
+}
+/* optional small label above button — matches "or teams" concept */
+.tour-tagline {
+font-size: 1.1rem;
+color: var(--primary);
+font-weight: 500;
+margin-bottom: 0.5rem;
+text-transform: uppercase;
+letter-spacing: 2px;
+word-spacing: 4px;
+}
+.tour-tagline i {
+color: var(--accent);
+margin: 0 5px;
+}
+/* ---------------------------------------------------------------- */
 </style>
 </head>
 <body>
@@ -570,18 +618,31 @@ text-align: center;
 </div>
 </section>
 
-<!-- Property Overview -->
+<!-- Property Overview section — contains the newly visible virtual tour button -->
 <section class="section" id="properties">
 <div class="container">
 <div class="section-title">
 <h2>Available Units</h2>
-<p>Located at 28 Service Street, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
+<p>Located at 28 Service Street, our property features multiple fully-furnished units perfect for individual professionals <strong>or teams</strong>.</p>
 </div>
+
+<!-- ********** VIRTUAL TOUR BUTTON – placed right below the "or teams" text and above property cards ********** -->
+<div class="virtual-tour-wrapper">
+<div class="tour-tagline">
+<i class="fas fa-vr-cardboard"></i> experience from anywhere <i class="fas fa-vr-cardboard"></i>
+</div>
+<a href="#" class="virtual-tour-btn" onclick="alert('🎥 Virtual tour would start here — 360° view of 28 Service Street apartments.'); return false;">
+<i class="fas fa-play-circle"></i> LAUNCH VIRTUAL TOUR
+<i class="fas fa-arrow-right"></i>
+</a>
+<p style="margin-top: 0.8rem; font-size: 0.95rem; color: #2d3748;"><i class="fas fa-clock"></i> See every room, kitchen & common area</p>
+</div>
+<!-- ********** END VIRTUAL TOUR BUTTON ********** -->
 
 <div class="property-grid">
 <!-- Apartment 5 -->
 <div class="property-card">
-<div class="property-image" style="height: 400px; background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5%20tv%20stand.png');">
+<div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5%20tv%20stand.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
@@ -598,9 +659,9 @@ text-align: center;
 </div>
 </div>
 
-<!-- Apartment -->
+<!-- Apartment (second card) -->
 <div class="property-card">
-<div class="property-image" style="height: 400px; background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20ktchn2.png');">
+<div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20ktchn2.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
@@ -617,9 +678,9 @@ text-align: center;
 </div>
 </div>
 
-<!-- Apartment -->
+<!-- Apartment (third card) -->
 <div class="property-card">
-<div class="property-image" style="height: 400px; background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed5.png');">
+<div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed5.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
@@ -913,7 +974,6 @@ text-align: center;
 // Form submission handling - Fixed to target the actual form
 document.querySelector('form').addEventListener('submit', function(e) {
 // Form will submit normally to FormSubmit.co
-// This is just for any additional client-side handling if needed
 console.log('Form submitted');
 });
 
