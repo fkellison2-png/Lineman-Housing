@@ -6,7 +6,7 @@
 <title>28 Service Street | Lineman Student Housing</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-/* ----- base & existing styles (identical to provided 1551 Oro Dam page) ----- */
+/* ----- EXACT same styles as 1551 Oro Dam page (copy-paste, unchanged) ----- */
 * {
 margin: 0;
 padding: 0;
@@ -99,8 +99,6 @@ padding: 0.7rem 1.5rem;
 border-radius: 4px;
 font-weight: 600;
 transition: background-color 0.3s;
-text-decoration: none;
-display: inline-block;
 }
 
 .cta-button:hover {
@@ -528,9 +526,9 @@ text-align: center;
 }
 }
 
-/* ----- Virtual tour section – style identical to 1551 Oro Dam page (clean, light, modern) ----- */
+/* ----- Virtual tour section – EXACT same as Oro Dam page (just renamed) ----- */
 .virtual-tour-section {
-background-color: var(--light); /* matches section background */
+background-color: var(--light);
 padding: 3rem 0;
 border-top: 1px solid var(--gray);
 border-bottom: 1px solid var(--gray);
@@ -558,7 +556,6 @@ color: var(--secondary);
 font-size: 1.1rem;
 }
 
-/* viewer styling - subtle and matches card style */
 .viewer {
 position: relative;
 text-align: center;
@@ -635,7 +632,6 @@ transform: scale(1.05);
 border-color: var(--accent);
 }
 
-/* CTA button styling (exactly as in hero / buttons) */
 .tour-button-wrapper {
 display: flex;
 justify-content: center;
@@ -650,6 +646,7 @@ font-size: 1.5rem;
 border-radius: 50px;
 box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 transition: 0.2s;
+text-decoration: none;
 }
 
 .tour-button-wrapper .cta-button:hover {
@@ -657,7 +654,6 @@ background-color: #319795;
 transform: translateY(-3px);
 }
 
-/* minor tweak for smooth scroll */
 html {
 scroll-behavior: smooth;
 }
@@ -686,7 +682,7 @@ scroll-behavior: smooth;
 </div>
 </header>
 
-<!-- Property Links (active = 28 Service Street) -->
+<!-- Property Links (now active = 28 Service Street) -->
 <section class="property-links">
 <div class="container property-links-container">
 <a href="index.html" class="property-link">1134 14th Street</a>
@@ -695,7 +691,7 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- Hero Section -->
+<!-- Hero Section (labels Service Street) -->
 <section class="hero">
 <div class="container">
 <h1>28 Service Street</h1>
@@ -707,11 +703,12 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- ===== VIRTUAL TOUR BUTTON + VIEWER (exactly matching Oro Dam style, with correct images) ===== -->
+<!-- VIRTUAL TOUR BUTTON (exact same as Oro Dam, links to #virtual-tour) -->
 <div class="tour-button-wrapper">
 <a href="#virtual-tour" class="cta-button"><i class="fas fa-camera"></i> Virtual Tour</a>
 </div>
 
+<!-- VIRTUAL TOUR SECTION (exact same structure, now with Service Street images) -->
 <section id="virtual-tour" class="virtual-tour-section">
 <div class="virtual-tour-container">
 <div class="tour-header">
@@ -730,7 +727,7 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- Property Overview (cards) -->
+<!-- Property Overview (Service Street content) -->
 <section class="section" id="properties">
 <div class="container">
 <div class="section-title">
@@ -799,7 +796,7 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- Room Details Table -->
+<!-- Room Details (Service Street data) -->
 <section class="section room-details" id="rooms">
 <div class="container">
 <div class="section-title">
@@ -821,7 +818,7 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- Amenities -->
+<!-- Amenities (generic, same as Oro Dam) -->
 <section class="section amenities" id="amenities">
 <div class="container">
 <div class="section-title"><h2>Premium Amenities Included</h2><p>Everything you need for a comfortable extended stay.</p></div>
@@ -836,7 +833,7 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact Section (Service Street as default) -->
 <section class="section contact-section" id="contact">
 <div class="container">
 <div class="section-title"><h2>Request Availability & Information</h2><p>Contact us to check availability or to schedule a virtual tour.</p></div>
@@ -892,7 +889,7 @@ scroll-behavior: smooth;
 </div>
 </footer>
 
-<!-- Virtual Tour Script (images preserved from earlier, exactly 27 slides) -->
+<!-- VIRTUAL TOUR SCRIPT – ONLY THE IMAGES ARE REPLACED WITH SERVICE STREET ONES (exactly the 27 images from your previous correct code) -->
 <script>
 (function() {
 const slides = [
@@ -956,7 +953,8 @@ document.getElementById("next")?.addEventListener("click", () => loadSlide(index
 loadSlide(0);
 })();
 </script>
-<!-- smooth scroll (from original) -->
+
+<!-- Smooth scroll (same as Oro Dam) -->
 <script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function(e) {
