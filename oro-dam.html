@@ -598,42 +598,47 @@ transition: border-color 0.3s;
 border-color: var(--accent);
 }
 
-/* Button Container */
-.tour-button-container {
+/* VISIBLE BUTTON STYLES */
+.tour-button-wrapper {
 text-align: center;
 margin: 30px 0 40px;
-padding: 15px;
-background: linear-gradient(135deg, rgba(56, 178, 172, 0.1), rgba(26, 54, 93, 0.1));
-border-radius: 60px;
-max-width: 400px;
+padding: 20px;
+background: linear-gradient(135deg, rgba(56, 178, 172, 0.15), rgba(26, 54, 93, 0.15));
+border-radius: 70px;
+max-width: 500px;
 margin-left: auto;
 margin-right: auto;
+border: 2px solid var(--accent);
+box-shadow: 0 10px 30px rgba(56, 178, 172, 0.3);
 }
 
 .virtual-tour-btn {
 background-color: var(--accent);
 color: white;
-padding: 1rem 2.5rem;
-border-radius: 50px;
-font-weight: 700;
-font-size: 1.2rem;
+padding: 1.3rem 3.5rem;
+border-radius: 60px;
+font-weight: 800;
+font-size: 1.5rem;
+letter-spacing: 1px;
 border: none;
 cursor: pointer;
 transition: all 0.3s;
-box-shadow: 0 8px 25px rgba(56, 178, 172, 0.4);
+box-shadow: 0 8px 25px rgba(56, 178, 172, 0.5);
 display: inline-block;
 text-decoration: none;
-border: 2px solid transparent;
+border: 3px solid white;
+text-transform: uppercase;
 }
 
 .virtual-tour-btn:hover {
 background-color: #319795;
-transform: translateY(-3px);
-box-shadow: 0 12px 30px rgba(56, 178, 172, 0.5);
+transform: translateY(-5px) scale(1.05);
+box-shadow: 0 15px 35px rgba(56, 178, 172, 0.7);
 }
 
 .virtual-tour-btn i {
-margin-right: 10px;
+margin-right: 15px;
+font-size: 1.8rem;
 }
 
 /* Responsive */
@@ -687,6 +692,15 @@ padding: 15px;
 .thumbs img {
 width: 80px;
 height: 60px;
+}
+
+.virtual-tour-btn {
+padding: 1rem 2rem;
+font-size: 1.2rem;
+}
+
+.virtual-tour-btn i {
+font-size: 1.4rem;
 }
 }
 </style>
@@ -743,13 +757,14 @@ height: 60px;
 <p>Located at 1551 Oro Dam Blvd W, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
 </div>
 
-<!-- VIRTUAL TOUR BUTTON - Placed exactly as requested -->
-<div class="tour-button-container">
+<!-- HIGHLY VISIBLE VIRTUAL TOUR BUTTON - Placed exactly where requested -->
+<div class="tour-button-wrapper">
 <a href="#virtual-tour" class="virtual-tour-btn">
-<i class="fas fa-vr-cardboard"></i> TAKE A VIRTUAL TOUR
+<i class="fas fa-vr-cardboard"></i> VIRTUAL TOUR
 </a>
 </div>
 
+<!-- Property Cards -->
 <div class="property-grid">
 <!-- Front House -->
 <div class="property-card">
