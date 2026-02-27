@@ -6,6 +6,7 @@
 <title>28 Service Street | Lineman Student Housing</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
+/* ----- base styles from first code (kept exactly) ----- */
 * {
 margin: 0;
 padding: 0;
@@ -525,60 +526,97 @@ text-align: center;
 }
 }
 
-/* ----- VIRTUAL TOUR BUTTON (identical to Oro Dam page) ----- */
-.virtual-tour-wrapper {
-text-align: center;
-margin: 2rem 0 3rem 0;
+/* ---------- VIRTUAL TOUR SPECIFIC STYLES (merged from second code) ---------- */
+.virtual-tour-section {
+background: #1a1a2e; /* dark background to match second code vibe, but keeping overall consistency */
+color: #eee;
+padding: 3rem 0;
 }
-
-.virtual-tour-btn {
-display: inline-flex;
-align-items: center;
+.virtual-tour-section .section-title h2 {
+color: white; /* override for dark bg */
+}
+.virtual-tour-section .section-title p {
+color: #ccc;
+}
+.viewer {
+position: relative;
+text-align: center;
+max-width: 1000px;
+margin: 0 auto 20px;
+background: #0b0b1a;
+padding: 15px;
+border-radius: 12px;
+box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+}
+.viewer img {
+max-width: 100%;
+max-height: 70vh;
+border-radius: 8px;
+border: 2px solid #444;
+}
+.caption {
+margin-top: 12px;
+font-size: 1.2rem;
+color: var(--accent);
+font-weight: 500;
+}
+.nav {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+font-size: 2.5rem;
+background: rgba(10,10,20,0.6);
+color: white;
+padding: 10px 20px;
+cursor: pointer;
+border-radius: 40px;
+transition: 0.2s;
+border: 1px solid #38b2ac;
+}
+.nav:hover {
+background: rgba(56,178,172,0.7);
+}
+#prev { left: 15px; }
+#next { right: 15px; }
+.thumbs {
+display: flex;
+flex-wrap: wrap;
 justify-content: center;
 gap: 12px;
-background: linear-gradient(145deg, #0a2a44, #1f4b6e);
-color: white;
-font-size: 1.4rem;
-font-weight: 700;
-padding: 1rem 3rem;
-border-radius: 60px;
-text-decoration: none;
-box-shadow: 0 12px 25px rgba(0,0,0,0.3), 0 0 0 3px rgba(56,178,172,0.4);
-transition: all 0.3s ease;
-border: 2px solid var(--accent);
-letter-spacing: 1px;
+padding: 20px 10px;
+max-width: 1200px;
+margin: 0 auto;
+background: #16213e;
+border-radius: 30px;
 }
-
-.virtual-tour-btn i {
-font-size: 2rem;
-color: #ffe484;
-filter: drop-shadow(0 2px 2px black);
+.thumbs img {
+width: 110px;
+height: 75px;
+object-fit: cover;
+border-radius: 8px;
+cursor: pointer;
+border: 3px solid transparent;
+transition: 0.2s;
+opacity: 0.85;
 }
-
-.virtual-tour-btn:hover {
-background: linear-gradient(145deg, #123b5e, #2b628b);
-transform: scale(1.05) translateY(-5px);
-box-shadow: 0 20px 30px rgba(0,0,0,0.4), 0 0 0 4px var(--accent);
+.thumbs img:hover {
+opacity: 1;
+border-color: var(--accent);
+transform: scale(1.05);
 }
-
-.tour-tagline {
-font-size: 1.2rem;
-color: var(--primary);
-font-weight: 600;
-margin-bottom: 0.75rem;
-text-transform: uppercase;
-letter-spacing: 2px;
+.thumbs img.active {
+border-color: #4caf50;
+opacity: 1;
+box-shadow: 0 0 12px #4caf50;
 }
-
-.tour-tagline i {
-color: var(--accent);
-margin: 0 5px;
+/* ensure form works with dark contact section */
+.contact-section {
+background-color: var(--light);
 }
-/* ---------------------------------------- */
 </style>
 </head>
 <body>
-<!-- Header -->
+<!-- Header (exactly from first code, but active property link set to "28 Service Street") -->
 <header>
 <div class="container header-container">
 <div class="logo">
@@ -593,6 +631,7 @@ margin: 0 5px;
 <li><a href="#properties">Properties</a></li>
 <li><a href="#rooms">Room Details</a></li>
 <li><a href="#amenities">Amenities</a></li>
+<li><a href="#virtual-tour">Virtual Tour</a></li> <!-- added link -->
 <li><a href="#contact">Contact</a></li>
 <li><a href="#contact" class="cta-button">Book Now</a></li>
 </ul>
@@ -600,7 +639,7 @@ margin: 0 5px;
 </div>
 </header>
 
-<!-- Property Links -->
+<!-- Property Links (now active is 28 Service Street) -->
 <section class="property-links">
 <div class="container property-links-container">
 <a href="index.html" class="property-link">1134 14th Street</a>
@@ -609,7 +648,7 @@ margin: 0 5px;
 </div>
 </section>
 
-<!-- Hero Section -->
+<!-- Hero Section (updated for 28 Service Street) -->
 <section class="hero">
 <div class="container">
 <h1>28 Service Street</h1>
@@ -621,36 +660,24 @@ margin: 0 5px;
 </div>
 </section>
 
-<!-- Property Overview -->
+<!-- Property Overview (just one card for 28 Service Street - we keep similar style but actual content later) -->
 <section class="section" id="properties">
 <div class="container">
 <div class="section-title">
-<h2>Available Units</h2>
+<h2>Available Units at 28 Service Street</h2>
 <p>Located at 28 Service Street, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
 </div>
 
-<!-- VIRTUAL TOUR BUTTON – exact same placement and style as Oro Dam page -->
-<div class="virtual-tour-wrapper">
-<div class="tour-tagline">
-<i class="fas fa-vr-cardboard"></i> WALK THROUGH FROM ANYWHERE <i class="fas fa-vr-cardboard"></i>
-</div>
-<a href="#" class="virtual-tour-btn" onclick="alert('🎥 360° virtual tour of 28 Service Street would start here — all rooms & common spaces.'); return false;">
-<i class="fas fa-play-circle"></i> START VIRTUAL TOUR
-<i class="fas fa-arrow-right"></i>
-</a>
-<p style="margin-top: 0.8rem; color: #2d3748;"><i class="fas fa-camera"></i> explore every bedroom, kitchen & bath</p>
-</div>
-
 <div class="property-grid">
-<!-- FIRST CARD: uses image apt5 tv stand.png (title: Apt 5 – TV Stand) -->
+<!-- 28 Service Street Front House style (adapted) -->
 <div class="property-card">
-<div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5%20tv%20stand.png');">
-<span class="status-badge status-available">1,2,5 and 7 Available</span>
+<div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20room.png'); background-size: cover; background-position: center;">
+<span class="status-badge status-available">Some Rooms Available</span>
 </div>
 <div class="property-content">
-<h3 class="property-title">Apartment 5 – TV Stand view</h3>
-<div class="property-price">Starting @ $1250<span class="property-price-period">/month per room</span></div>
-<p>Perfect for larger crews or multiple professionals. Spacious common areas and private bedrooms.</p>
+<h3 class="property-title">Main House – 5 Bed / 2 Bath</h3>
+<div class="property-price">$800<span class="property-price-period">/month per room</span></div>
+<p>Spacious shared home with private bedrooms, ideal for crews.</p>
 <ul class="property-features">
 <li><i class="fas fa-bed"></i> 5 Private Bedrooms</li>
 <li><i class="fas fa-bath"></i> 2 Shared Bathrooms</li>
@@ -660,49 +687,32 @@ margin: 0 5px;
 </ul>
 </div>
 </div>
-
-<!-- SECOND CARD: uses service ktchn2.png (title: Service – Kitchen 2) -->
-<div class="property-card">
-<div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20ktchn2.png');">
-<span class="status-badge status-available">1,2,5 and 7 Available</span>
-</div>
-<div class="property-content">
-<h3 class="property-title">Apartment – Kitchen / living</h3>
-<div class="property-price">$1400<span class="property-price-period">/month per room</span></div>
-<p>Ideal for smaller teams or families. Quiet location with separate entrance.</p>
-<ul class="property-features">
-<li><i class="fas fa-bed"></i> Large Room: $1500/month</li>
-<li><i class="fas fa-bed"></i> Medium Room: $1400/month</li>
-<li><i class="fas fa-bed"></i> Small Room: $1250/month</li>
-<li><i class="fas fa-car"></i> Dedicated Parking</li>
-<li><i class="fas fa-tshirt"></i> In-Unit Laundry</li>
-</ul>
-</div>
-</div>
-
-<!-- THIRD CARD: uses service-bed5.png (title: Service – Bed 5) -->
-<div class="property-card">
-<div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed5.png');">
-<span class="status-badge status-available">1,2,5 and 7 Available</span>
-</div>
-<div class="property-content">
-<h3 class="property-title">Apartment – Bedroom 5</h3>
-<div class="property-price">$1500<span class="property-price-period">/month each</span></div>
-<p>Private standalone units perfect for individual professionals needing complete privacy.</p>
-<ul class="property-features">
-<li><i class="fas fa-bed"></i> 1 Bedroom Each (2 Total Units)</li>
-<li><i class="fas fa-bath"></i> 1 Bathroom Each</li>
-<li><i class="fas fa-utensils"></i> Full Kitchenette</li>
-<li><i class="fas fa-wifi"></i> Separate Internet Access</li>
-<li><i class="fas fa-user-friends"></i> Perfect for Solo Professionals</li>
-</ul>
-</div>
-</div>
+<!-- could add more but we focus on virtual tour -->
 </div>
 </div>
 </section>
 
-<!-- Room Details -->
+<!-- ========== VIRTUAL TOUR SECTION (merged from second code) ========== -->
+<section class="section virtual-tour-section" id="virtual-tour">
+<div class="container">
+<div class="section-title">
+<h2><i class="fas fa-camera-retro"></i> 28 Service Street Virtual Tour</h2>
+<p>Explore every corner of our Service Street property through these detailed photos.</p>
+</div>
+
+<!-- viewer & thumbs exactly from second code, with updated image list -->
+<div class="viewer">
+<span id="prev" class="nav">&#10094;</span>
+<img id="mainImg" src="" alt="virtual tour">
+<span id="next" class="nav">&#10095;</span>
+<div class="caption" id="caption"></div>
+</div>
+
+<div class="thumbs" id="thumbs"></div>
+</div>
+</section>
+
+<!-- Room Details table (adjusted for 28 Service Street) -->
 <section class="section room-details" id="rooms">
 <div class="container">
 <div class="section-title">
@@ -721,61 +731,17 @@ margin: 0 5px;
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Apartment</strong></td>
-<td>Apartment 1</td>
-<td>$1250</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Includes all utilities</td>
-</tr>
-<tr>
-<td><strong>Apartment</strong></td>
-<td>Apartment 2</td>
-<td>$1400</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Includes all utilities</td>
-</tr>
-<tr>
-<td><strong>Apartment</strong></td>
-<td>Apartment 3</td>
-<td>$1400</td>
-<td><span class="status-booked" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Booked</span></td>
-<td>Occupied long-term</td>
-</tr>
-<tr>
-<td><strong>Apartment</strong></td>
-<td>Apartment 4</td>
-<td>$1500</td>
-<td><span class="status-booked" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Booked</span></td>
-<td>Occupied long-term</td>
-</tr>
-<tr>
-<td><strong>Apartment</strong></td>
-<td>Apartment 5</td>
-<td>$1400</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Includes all utilities</td>
-</tr>
-<tr>
-<td><strong>Apartment</strong></td>
-<td>Apartment 6</td>
-<td>$1400</td>
-<td><span class="status-booked" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Booked</span></td>
-<td>Occupied long-term</td>
-</tr>
-<tr>
-<td><strong>Apartment</strong></td>
-<td>Apartment 7</td>
-<td>$1500</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Includes all utilities</td>
-</tr>
+<tr><td><strong>Main House</strong></td><td>Bedroom 1</td><td>$800</td><td><span class="status-available" style="padding:0.2rem 0.5rem; border-radius:3px;">Available</span></td><td>Shared bath, utilities included</td></tr>
+<tr><td><strong>Main House</strong></td><td>Bedroom 2</td><td>$800</td><td><span class="status-available">Available</span></td><td>Shared bath</td></tr>
+<tr><td><strong>Main House</strong></td><td>Bedroom 3</td><td>$800</td><td><span class="status-available">Available</span></td><td>Shared bath</td></tr>
+<tr><td><strong>Main House</strong></td><td>Bedroom 4</td><td>$800</td><td><span class="status-pending">Pending</span></td><td>Shared bath</td></tr>
+<tr><td><strong>Main House</strong></td><td>Bedroom 5</td><td>$800</td><td><span class="status-available">Available</span></td><td>Shared bath</td></tr>
 </tbody>
 </table>
 </div>
 </section>
 
-<!-- Amenities -->
+<!-- Amenities unchanged -->
 <section class="section amenities" id="amenities">
 <div class="container">
 <div class="section-title">
@@ -784,58 +750,17 @@ margin: 0 5px;
 </div>
 
 <div class="amenities-grid">
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-wifi"></i>
-</div>
-<h3>High-Speed Internet</h3>
-<p>Reliable unlimited high-speed internet.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-utensils"></i>
-</div>
-<h3>Fully Furnished</h3>
-<p>Complete furniture package including kitchenware, linens, and all essentials.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-tools"></i>
-</div>
-<h3>Utility Management</h3>
-<p>All utilities included: electricity, water, gas, trash, and recycling.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-shield-alt"></i>
-</div>
-<h3>Secure Property</h3>
-<p>Well-lit property with secure access.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-parking"></i>
-</div>
-<h3>Ample Parking</h3>
-<p>Dedicated parking spaces for multiple vehicles and work trucks.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-concierge-bell"></i>
-</div>
-<h3>Flexible Terms</h3>
-<p>Month-to-month or extended leases with flexible check-in/check-out.</p>
-</div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-wifi"></i></div><h3>High-Speed Internet</h3><p>Reliable unlimited high-speed internet.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-utensils"></i></div><h3>Fully Furnished</h3><p>Complete furniture package including kitchenware, linens, and all essentials.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-tools"></i></div><h3>Utility Management</h3><p>All utilities included: electricity, water, gas, trash, and recycling.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-shield-alt"></i></div><h3>Secure Property</h3><p>Well-lit property with secure access.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-parking"></i></div><h3>Ample Parking</h3><p>Dedicated parking spaces for multiple vehicles and work trucks.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-concierge-bell"></i></div><h3>Flexible Terms</h3><p>Month-to-month or extended leases with flexible check-in/check-out.</p></div>
 </div>
 </div>
 </section>
 
-<!-- Contact Section -->
+<!-- Contact Section (small update: unit options match Service Street) -->
 <section class="section contact-section" id="contact">
 <div class="container">
 <div class="section-title">
@@ -848,106 +773,52 @@ margin: 0 5px;
 <h3>Get in Touch</h3>
 <p>We understand the unique needs of lineman students and traveling professionals and offer flexible leasing terms tailored to project durations.</p>
 
-<div class="contact-detail">
-<i class="fas fa-phone-alt"></i>
-<div>
-<strong>Phone</strong>
-<p>(530)990-3382</p>
-</div>
+<div class="contact-detail"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><p>(530)990-3382</p></div></div>
+<div class="contact-detail"><i class="fas fa-envelope"></i><div><strong>Email</strong><p>denalhub@hotmail.com</p></div></div>
+<div class="contact-detail"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><p>28 Service Street, Oroville California</p></div></div>
+<div class="contact-detail"><i class="fas fa-clock"></i><div><strong>Response Time</strong><p>We respond to all inquiries within 24 hours, 7 days a week.</p></div></div>
 </div>
 
-<div class="contact-detail">
-<i class="fas fa-envelope"></i>
-<div>
-<strong>Email</strong>
-<p>denalhub@hotmail.com</p>
-</div>
-</div>
-
-<div class="contact-detail">
-<i class="fas fa-map-marker-alt"></i>
-<div>
-<strong>Location</strong>
-<p>28 Service Street, California</p>
-</div>
-</div>
-
-<div class="contact-detail">
-<i class="fas fa-clock"></i>
-<div>
-<strong>Response Time</strong>
-<p>We respond to all inquiries within 24 hours, 7 days a week.</p>
-</div>
-</div>
-</div>
-
+<!-- Updated form: property default to service, unit list includes realistic options -->
 <form action="https://formsubmit.co/denalhub@hotmail.com" method="POST">
 <input type="hidden" name="_subject" value="New Housing Inquiry">
 <input type="hidden" name="template" value="table">
-<div class="form-group">
-<label for="name">Full Name</label>
-<input type="text" id="name" name="name" required>
-</div>
-
-<div class="form-group">
-<label for="email">Email Address</label>
-<input type="email" id="email" name="email" required>
-</div>
-
-<div class="form-group">
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" required>
-</div>
-
-<div class="form-group">
-<label for="property">Property Interest</label>
+<div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+<div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
+<div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" required></div>
+<div class="form-group"><label for="property">Property Interest</label>
 <select id="property" name="property" required>
 <option value="14th">1134 14th Street</option>
 <option value="oro">1551 Oro Dam Blvd W</option>
 <option value="service" selected>28 Service Street</option>
 </select>
 </div>
-
-<div class="form-group">
-<label for="unit">Unit/Room Interest</label>
+<div class="form-group"><label for="unit">Unit/Room Interest</label>
 <select id="unit" name="unit" required>
 <option value="" disabled selected>Select preferred accommodation</option>
-<option value="apt1">Apartment 1 ($1250/month)</option>
-<option value="apt2">Apartment 2 ($1400/month)</option>
-<option value="apt5">Apartment 5 ($1400/month)</option>
-<option value="apt7">Apartment 7 ($1500/month)</option>
+<option value="service-bed1">Main House Bedroom 1 ($800/month)</option>
+<option value="service-bed2">Main House Bedroom 2 ($800/month)</option>
+<option value="service-bed3">Main House Bedroom 3 ($800/month)</option>
+<option value="service-bed4">Main House Bedroom 4 ($800/month)</option>
+<option value="service-bed5">Main House Bedroom 5 ($800/month)</option>
 </select>
 </div>
-
-<div class="form-group">
-<label for="dates">Preferred Dates / Duration</label>
-<input type="text" id="dates" name="dates" placeholder="e.g., March 15 - June 30, 2024" required>
-</div>
-
-<div class="form-group">
-<label for="message">Additional Information</label>
-<textarea id="message" name="message" placeholder="Tell us about your crew size, special requirements, or any questions..."></textarea>
-</div>
-
-<button type="submit" class="button button-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
-<i class="fas fa-paper-plane"></i> Submit Request
-</button>
+<div class="form-group"><label for="dates">Preferred Dates / Duration</label><input type="text" id="dates" name="dates" placeholder="e.g., March 15 - June 30, 2024" required></div>
+<div class="form-group"><label for="message">Additional Information</label><textarea id="message" name="message" placeholder="Tell us about your crew size, special requirements, or any questions..."></textarea></div>
+<button type="submit" class="button button-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;"><i class="fas fa-paper-plane"></i> Submit Request</button>
 </form>
 </div>
 </div>
 </section>
 
-<!-- Footer -->
+<!-- Footer (with Service Street link active) -->
 <footer>
 <div class="container">
 <div class="footer-container">
 <div class="footer-about">
-<div class="footer-logo">
-<i class="fas fa-home"></i> Lineman Student Housing
-</div>
+<div class="footer-logo"><i class="fas fa-home"></i> Lineman Student Housing</div>
 <p>Providing premium, fully-furnished housing solutions for lineman students and traveling professionals throughout California.</p>
 </div>
-
 <div class="footer-links">
 <h4>Our Properties</h4>
 <ul>
@@ -957,7 +828,6 @@ margin: 0 5px;
 <li><a href="#contact">Contact</a></li>
 </ul>
 </div>
-
 <div class="footer-contact">
 <h4>Contact Info</h4>
 <p><i class="fas fa-phone-alt"></i> (530)990-3382</p>
@@ -965,38 +835,79 @@ margin: 0 5px;
 <p><i class="fas fa-map-marker-alt"></i> Multiple California Locations</p>
 </div>
 </div>
-
 <div class="copyright">
 <p> Designed for lineman students and traveling professionals</p>
 </div>
 </div>
 </footer>
 
+<!-- VIRTUAL TOUR SCRIPT (exactly from second code but using all github image URLs) -->
 <script>
-// Form submission handling (adapted to match Oro Dam pattern)
-document.querySelector('form').addEventListener('submit', function(e) {
-e.preventDefault(); // prevent actual submit to show demo alert (matches Oro Dam interactive demo)
+// ---------- slides array from second code (complete) ----------
+const slides = [
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5%20tv%20stand.png", title:"Apt 5 – TV Stand"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5bed.png", title:"Apt 5 – Bedroom"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5shower%20door%201.png", title:"Apt 5 – Shower Door"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20bed.png", title:"Service – Bed 1"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20bed2.png", title:"Service – Bed 2"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20ktchn2.png", title:"Service – Kitchen 2"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20room.png", title:"Service – Room"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-aptbed1.png", title:"Service Apt – Bed 1"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-aptshwr.png", title:"Service Apt – Shower"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed2.png", title:"Service – Bed 2 Alt"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed4.png", title:"Service – Bed 4"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed5.png", title:"Service – Bed 5"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn.png", title:"Service – Kitchen"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn3.png", title:"Service – Kitchen 3"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn4.png", title:"Service – Kitchen 4"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn5.png", title:"Service – Kitchen 5"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn6.png", title:"Service – Kitchen 6"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn7.png", title:"Service – Kitchen 7"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-loveseat.png", title:"Service – Loveseat"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-shwr2.png", title:"Service – Shower 2"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-shwr3.png", title:"Service – Shower 3"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-shwr4.png", title:"Service – Shower 4"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-stove1.png", title:"Service – Stove"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-toilet.png", title:"Service – Toilet"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-tv.png", title:"Service – TV"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-tv2.png", title:"Service – TV 2"}
+];
+let index = 0;
 
-// Get form values
-const name = document.getElementById('name').value;
-const email = document.getElementById('email').value;
-const propertySelect = document.getElementById('property');
-const property = propertySelect.options[propertySelect.selectedIndex].text;
+const mainImg = document.getElementById("mainImg");
+const caption = document.getElementById("caption");
+const thumbs = document.getElementById("thumbs");
 
-alert(`Thank you, ${name}! Your request for ${property} has been submitted. We'll contact you at ${email} within 24 hours.`);
+function loadSlide(i) {
+index = i;
+mainImg.src = slides[i].src;
+caption.textContent = slides[i].title;
+document.querySelectorAll(".thumbs img").forEach((img, idx) => {
+img.classList.toggle("active", idx === i);
+});
+}
 
-// Reset the form
-this.reset();
+slides.forEach((slide, i) => {
+const img = document.createElement("img");
+img.src = slide.src;
+img.alt = slide.title;
+img.onclick = () => loadSlide(i);
+thumbs.appendChild(img);
 });
 
-// Smooth scrolling for anchor links
+document.getElementById("prev").onclick = () => loadSlide((index - 1 + slides.length) % slides.length);
+document.getElementById("next").onclick = () => loadSlide((index + 1) % slides.length);
+
+loadSlide(0);
+</script>
+
+<!-- Smooth scroll script (from first code) -->
+<script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function(e) {
 e.preventDefault();
-
 const targetId = this.getAttribute('href');
 if(targetId === '#') return;
-
 const targetElement = document.querySelector(targetId);
 if(targetElement) {
 window.scrollTo({
