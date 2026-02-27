@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>28 Service Street| Lineman Student Housing</title>
+<title>28 Service Street | Lineman Student Housing</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 * {
@@ -193,52 +193,6 @@ border: 2px solid white;
 .button-primary:hover, .button-secondary:hover {
 transform: translateY(-3px);
 box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-/* Virtual Tour Button */
-.tour-button-container {
-text-align: center;
-margin: 2rem 0 3rem 0;
-}
-
-.tour-button {
-background-color: var(--accent);
-color: white;
-padding: 18px 40px;
-font-size: 1.3rem;
-font-weight: 600;
-border: none;
-border-radius: 50px;
-cursor: pointer;
-transition: all 0.3s;
-box-shadow: 0 4px 15px rgba(56, 178, 172, 0.3);
-display: inline-flex;
-align-items: center;
-gap: 12px;
-text-decoration: none;
-border: 2px solid transparent;
-}
-
-.tour-button:hover {
-background-color: #319795;
-transform: translateY(-5px);
-box-shadow: 0 10px 25px rgba(56, 178, 172, 0.4);
-border-color: white;
-}
-
-.tour-button i {
-font-size: 1.4rem;
-}
-
-.tour-subtitle {
-margin-top: 10px;
-color: var(--secondary);
-font-size: 1rem;
-}
-
-.tour-subtitle i {
-color: var(--accent);
-margin-right: 5px;
 }
 
 /* Property Overview */
@@ -526,129 +480,6 @@ color: #cbd5e0;
 font-size: 0.9rem;
 }
 
-/* Modal Styles */
-.modal {
-display: none;
-position: fixed;
-top: 0;
-left: 0;
-width: 100%;
-height: 100%;
-background: rgba(0,0,0,0.95);
-z-index: 1000;
-overflow-y: auto;
-}
-
-.modal-content {
-position: relative;
-min-height: 100vh;
-padding: 20px;
-}
-
-.close-button {
-position: fixed;
-top: 20px;
-right: 20px;
-background: var(--accent);
-color: white;
-border: none;
-width: 50px;
-height: 50px;
-border-radius: 50%;
-font-size: 1.5rem;
-cursor: pointer;
-z-index: 1001;
-display: flex;
-align-items: center;
-justify-content: center;
-transition: all 0.3s;
-}
-
-.close-button:hover {
-transform: scale(1.1);
-background-color: #319795;
-}
-
-.modal h2 {
-text-align: center;
-color: white;
-margin-bottom: 30px;
-}
-
-.modal h2 i {
-color: var(--accent);
-margin-right: 10px;
-}
-
-.viewer {
-position: relative;
-text-align: center;
-margin-bottom: 20px;
-}
-
-.viewer img {
-max-width: 100%;
-max-height: 70vh;
-border-radius: 8px;
-}
-
-.modal-caption {
-margin-top: 15px;
-color: var(--accent);
-font-size: 1.1rem;
-}
-
-.modal-nav {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-background: var(--accent);
-color: white;
-padding: 15px 20px;
-cursor: pointer;
-border-radius: 50%;
-z-index: 10;
-font-size: 1.5rem;
-transition: all 0.3s;
-}
-
-.modal-nav:hover {
-background-color: #319795;
-transform: translateY(-50%) scale(1.1);
-}
-
-#modal-prev {
-left: 10px;
-}
-
-#modal-next {
-right: 10px;
-}
-
-.modal-thumbs {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-gap: 10px;
-padding: 20px;
-background: rgba(255,255,255,0.1);
-border-radius: 8px;
-}
-
-.modal-thumbs img {
-width: 100px;
-height: 70px;
-object-fit: cover;
-cursor: pointer;
-border-radius: 4px;
-border: 3px solid transparent;
-transition: all 0.3s;
-}
-
-.modal-thumbs img:hover {
-transform: translateY(-3px);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
 .header-container {
@@ -691,16 +522,6 @@ align-items: center;
 width: 100%;
 max-width: 300px;
 text-align: center;
-}
-
-.tour-button {
-padding: 15px 30px;
-font-size: 1.1rem;
-}
-
-.modal-nav {
-padding: 10px 15px;
-font-size: 1.2rem;
 }
 }
 </style>
@@ -757,25 +578,14 @@ font-size: 1.2rem;
 <p>Located at 28 Service Street, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
 </div>
 
-<!-- Virtual Tour Button - Placed exactly as requested: below "Available Units" and below "or teams" -->
-<div class="tour-button-container">
-<a href="#" onclick="openVirtualTour(); return false;" class="tour-button">
-<i class="fas fa-vr-cardboard"></i> Launch Virtual Tour
-<i class="fas fa-arrow-right"></i>
-</a>
-<div class="tour-subtitle">
-<i class="fas fa-camera"></i> Explore our fully furnished apartments with 360° views
-</div>
-</div>
-
 <div class="property-grid">
-<!-- Apartment 1 -->
+<!-- Apartment 5 -->
 <div class="property-card">
-<div class="property-image" style="background-image: url('https://i.ibb.co/Q3kJnDzC/IMG-0062.jpg');">
+<div class="property-image" style="height: 400px; background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5%20tv%20stand.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
-<h3 class="property-title">Apartment</h3>
+<h3 class="property-title">Apartment 5</h3>
 <div class="property-price">Starting @ $1250<span class="property-price-period">/month per room</span></div>
 <p>Perfect for larger crews or multiple professionals. Spacious common areas and private bedrooms.</p>
 <ul class="property-features">
@@ -788,9 +598,9 @@ font-size: 1.2rem;
 </div>
 </div>
 
-<!-- Apartment 2 -->
+<!-- Apartment -->
 <div class="property-card">
-<div class="property-image" style="background-image: url('https://i.ibb.co/v4Tc6mHN/IMG-0072.jpg');">
+<div class="property-image" style="height: 400px; background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20ktchn2.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
@@ -807,9 +617,9 @@ font-size: 1.2rem;
 </div>
 </div>
 
-<!-- Apartment 3 -->
+<!-- Apartment -->
 <div class="property-card">
-<div class="property-image" style="background-image: url('https://i.ibb.co/hxb7xJWG/IMG-0100.jpg');">
+<div class="property-image" style="height: 400px; background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed5.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
@@ -1039,11 +849,10 @@ font-size: 1.2rem;
 <label for="unit">Unit/Room Interest</label>
 <select id="unit" name="unit" required>
 <option value="" disabled selected>Select preferred accommodation</option>
-<option value="front">Front House Room ($800/month)</option>
-<option value="back-master">Back House Master Suite ($1100/month)</option>
-<option value="back-medium">Back House Medium Room ($800/month)</option>
-<option value="back-small">Back House Small Room ($750/month)</option>
-<option value="tiny">Tiny Home ($1400/month)</option>
+<option value="apt1">Apartment 1 ($1250/month)</option>
+<option value="apt2">Apartment 2 ($1400/month)</option>
+<option value="apt5">Apartment 5 ($1400/month)</option>
+<option value="apt7">Apartment 7 ($1500/month)</option>
 </select>
 </div>
 
@@ -1100,142 +909,17 @@ font-size: 1.2rem;
 </div>
 </footer>
 
-<!-- Virtual Tour Modal -->
-<div id="virtualTourModal" class="modal">
-<div class="modal-content">
-<button class="close-button" onclick="closeVirtualTour()">
-<i class="fas fa-times"></i>
-</button>
-
-<h2><i class="fas fa-vr-cardboard"></i> 28 Service Street Virtual Tour</h2>
-
-<!-- Virtual Tour Viewer -->
-<div class="viewer">
-<span id="modal-prev" class="modal-nav">&#10094;</span>
-<img id="modal-mainImg" src="" alt="Virtual tour image">
-<span id="modal-next" class="modal-nav">&#10095;</span>
-<div id="modal-caption" class="modal-caption"></div>
-</div>
-
-<!-- Thumbnails -->
-<div id="modal-thumbs" class="modal-thumbs"></div>
-</div>
-</div>
-
 <script>
-// Virtual Tour Slides
-const tourSlides = [
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5%20tv%20stand.png", title:"Apartment 5 – Living Area with TV Stand"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5bed.png", title:"Apartment 5 – Comfortable Bedroom"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5shower%20door%201.png", title:"Apartment 5 – Modern Shower"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20bed.png", title:"Service Street – Master Bedroom"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20bed2.png", title:"Service Street – Second Bedroom"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20ktchn2.png", title:"Service Street – Fully Equipped Kitchen"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20room.png", title:"Service Street – Common Area"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-aptbed1.png", title:"Service Apartment – Bedroom 1"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-aptshwr.png", title:"Service Apartment – Bathroom"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed2.png", title:"Service Street – Bedroom 2"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed4.png", title:"Service Street – Bedroom 4"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed5.png", title:"Service Street – Bedroom 5"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn.png", title:"Service Street – Kitchen Overview"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn3.png", title:"Service Street – Kitchen with Dining"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn4.png", title:"Service Street – Kitchen Details"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn5.png", title:"Service Street – Modern Appliances"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn6.png", title:"Service Street – Kitchen Storage"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-ktchn7.png", title:"Service Street – Kitchen Counter Space"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-loveseat.png", title:"Service Street – Cozy Loveseat"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-shwr2.png", title:"Service Street – Shower 2"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-shwr3.png", title:"Service Street – Shower 3"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-shwr4.png", title:"Service Street – Shower 4"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-stove1.png", title:"Service Street – Stove and Oven"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-toilet.png", title:"Service Street – Bathroom"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-tv.png", title:"Service Street – TV Area"},
-{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-tv2.png", title:"Service Street – Entertainment Setup"}
-];
-
-let currentIndex = 0;
-const modal = document.getElementById('virtualTourModal');
-const mainImg = document.getElementById('modal-mainImg');
-const caption = document.getElementById('modal-caption');
-const thumbsContainer = document.getElementById('modal-thumbs');
-
-// Open virtual tour modal
-function openVirtualTour() {
-modal.style.display = 'block';
-document.body.style.overflow = 'hidden';
-loadModalSlide(0);
-}
-
-// Close virtual tour modal
-function closeVirtualTour() {
-modal.style.display = 'none';
-document.body.style.overflow = 'auto';
-}
-
-// Load slide in modal
-function loadModalSlide(index) {
-currentIndex = index;
-if (mainImg && caption && tourSlides[index]) {
-mainImg.src = tourSlides[index].src;
-caption.textContent = tourSlides[index].title;
-
-// Update active thumbnail
-const thumbs = document.querySelectorAll('#modal-thumbs img');
-thumbs.forEach((thumb, i) => {
-if (i === index) {
-thumb.style.border = '3px solid var(--accent)';
-} else {
-thumb.style.border = '3px solid transparent';
-}
-});
-}
-}
-
-// Create thumbnails
-tourSlides.forEach((slide, i) => {
-const img = document.createElement('img');
-img.src = slide.src;
-img.alt = slide.title;
-img.onclick = () => loadModalSlide(i);
-thumbsContainer.appendChild(img);
-});
-
-// Modal navigation
-document.getElementById('modal-prev').addEventListener('click', function() {
-loadModalSlide((currentIndex - 1 + tourSlides.length) % tourSlides.length);
-});
-
-document.getElementById('modal-next').addEventListener('click', function() {
-loadModalSlide((currentIndex + 1) % tourSlides.length);
-});
-
-// Close modal with Escape key
-document.addEventListener('keydown', function(e) {
-if (e.key === 'Escape' && modal.style.display === 'block') {
-closeVirtualTour();
-}
-
-// Arrow key navigation when modal is open
-if (modal.style.display === 'block') {
-if (e.key === 'ArrowLeft') {
-loadModalSlide((currentIndex - 1 + tourSlides.length) % tourSlides.length);
-} else if (e.key === 'ArrowRight') {
-loadModalSlide((currentIndex + 1) % tourSlides.length);
-}
-}
-});
-
-// Close modal when clicking outside the content
-modal.addEventListener('click', function(e) {
-if (e.target === modal) {
-closeVirtualTour();
-}
+// Form submission handling - Fixed to target the actual form
+document.querySelector('form').addEventListener('submit', function(e) {
+// Form will submit normally to FormSubmit.co
+// This is just for any additional client-side handling if needed
+console.log('Form submitted');
 });
 
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function(e) {
-if (this.getAttribute('href') !== '#' && !this.getAttribute('onclick')) {
 e.preventDefault();
 
 const targetId = this.getAttribute('href');
@@ -1247,7 +931,6 @@ window.scrollTo({
 top: targetElement.offsetTop - 80,
 behavior: 'smooth'
 });
-}
 }
 });
 });
