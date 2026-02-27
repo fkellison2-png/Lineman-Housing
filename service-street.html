@@ -525,53 +525,56 @@ text-align: center;
 }
 }
 
-/* ----- VIRTUAL TOUR BUTTON STYLES (visible & placed as requested) ----- */
+/* ----- VIRTUAL TOUR BUTTON (identical to Oro Dam page) ----- */
 .virtual-tour-wrapper {
 text-align: center;
-margin: 2rem 0 2rem 0; /* space above property cards */
+margin: 2rem 0 3rem 0;
 }
+
 .virtual-tour-btn {
 display: inline-flex;
 align-items: center;
 justify-content: center;
-gap: 10px;
-background: linear-gradient(145deg, #0f2b4d, #1f4b6e);
+gap: 12px;
+background: linear-gradient(145deg, #0a2a44, #1f4b6e);
 color: white;
-font-size: 1.3rem;
-font-weight: 600;
+font-size: 1.4rem;
+font-weight: 700;
 padding: 1rem 3rem;
 border-radius: 60px;
 text-decoration: none;
-box-shadow: 0 10px 20px rgba(0,0,0,0.25), 0 0 0 2px rgba(56,178,172,0.5);
+box-shadow: 0 12px 25px rgba(0,0,0,0.3), 0 0 0 3px rgba(56,178,172,0.4);
 transition: all 0.3s ease;
 border: 2px solid var(--accent);
-letter-spacing: 0.5px;
+letter-spacing: 1px;
 }
+
 .virtual-tour-btn i {
-font-size: 1.8rem;
-color: #ffd966;
-text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+font-size: 2rem;
+color: #ffe484;
+filter: drop-shadow(0 2px 2px black);
 }
+
 .virtual-tour-btn:hover {
-background: linear-gradient(145deg, #143b5e, #2b628b);
-transform: scale(1.03) translateY(-4px);
-box-shadow: 0 18px 30px rgba(0,0,0,0.3), 0 0 0 3px var(--accent);
+background: linear-gradient(145deg, #123b5e, #2b628b);
+transform: scale(1.05) translateY(-5px);
+box-shadow: 0 20px 30px rgba(0,0,0,0.4), 0 0 0 4px var(--accent);
 }
-/* optional small label above button — matches "or teams" concept */
+
 .tour-tagline {
-font-size: 1.1rem;
+font-size: 1.2rem;
 color: var(--primary);
-font-weight: 500;
-margin-bottom: 0.5rem;
+font-weight: 600;
+margin-bottom: 0.75rem;
 text-transform: uppercase;
 letter-spacing: 2px;
-word-spacing: 4px;
 }
+
 .tour-tagline i {
 color: var(--accent);
 margin: 0 5px;
 }
-/* ---------------------------------------------------------------- */
+/* ---------------------------------------- */
 </style>
 </head>
 <body>
@@ -618,35 +621,34 @@ margin: 0 5px;
 </div>
 </section>
 
-<!-- Property Overview section — contains the newly visible virtual tour button -->
+<!-- Property Overview -->
 <section class="section" id="properties">
 <div class="container">
 <div class="section-title">
 <h2>Available Units</h2>
-<p>Located at 28 Service Street, our property features multiple fully-furnished units perfect for individual professionals <strong>or teams</strong>.</p>
+<p>Located at 28 Service Street, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
 </div>
 
-<!-- ********** VIRTUAL TOUR BUTTON – placed right below the "or teams" text and above property cards ********** -->
+<!-- VIRTUAL TOUR BUTTON – exact same placement and style as Oro Dam page -->
 <div class="virtual-tour-wrapper">
 <div class="tour-tagline">
-<i class="fas fa-vr-cardboard"></i> experience from anywhere <i class="fas fa-vr-cardboard"></i>
+<i class="fas fa-vr-cardboard"></i> WALK THROUGH FROM ANYWHERE <i class="fas fa-vr-cardboard"></i>
 </div>
-<a href="#" class="virtual-tour-btn" onclick="alert('🎥 Virtual tour would start here — 360° view of 28 Service Street apartments.'); return false;">
-<i class="fas fa-play-circle"></i> LAUNCH VIRTUAL TOUR
+<a href="#" class="virtual-tour-btn" onclick="alert('🎥 360° virtual tour of 28 Service Street would start here — all rooms & common spaces.'); return false;">
+<i class="fas fa-play-circle"></i> START VIRTUAL TOUR
 <i class="fas fa-arrow-right"></i>
 </a>
-<p style="margin-top: 0.8rem; font-size: 0.95rem; color: #2d3748;"><i class="fas fa-clock"></i> See every room, kitchen & common area</p>
+<p style="margin-top: 0.8rem; color: #2d3748;"><i class="fas fa-camera"></i> explore every bedroom, kitchen & bath</p>
 </div>
-<!-- ********** END VIRTUAL TOUR BUTTON ********** -->
 
 <div class="property-grid">
-<!-- Apartment 5 -->
+<!-- FIRST CARD: uses image apt5 tv stand.png (title: Apt 5 – TV Stand) -->
 <div class="property-card">
 <div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/apt5%20tv%20stand.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
-<h3 class="property-title">Apartment 5</h3>
+<h3 class="property-title">Apartment 5 – TV Stand view</h3>
 <div class="property-price">Starting @ $1250<span class="property-price-period">/month per room</span></div>
 <p>Perfect for larger crews or multiple professionals. Spacious common areas and private bedrooms.</p>
 <ul class="property-features">
@@ -659,13 +661,13 @@ margin: 0 5px;
 </div>
 </div>
 
-<!-- Apartment (second card) -->
+<!-- SECOND CARD: uses service ktchn2.png (title: Service – Kitchen 2) -->
 <div class="property-card">
 <div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service%20ktchn2.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
-<h3 class="property-title">Apartment</h3>
+<h3 class="property-title">Apartment – Kitchen / living</h3>
 <div class="property-price">$1400<span class="property-price-period">/month per room</span></div>
 <p>Ideal for smaller teams or families. Quiet location with separate entrance.</p>
 <ul class="property-features">
@@ -678,13 +680,13 @@ margin: 0 5px;
 </div>
 </div>
 
-<!-- Apartment (third card) -->
+<!-- THIRD CARD: uses service-bed5.png (title: Service – Bed 5) -->
 <div class="property-card">
 <div class="property-image" style="background-image: url('https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-bed5.png');">
 <span class="status-badge status-available">1,2,5 and 7 Available</span>
 </div>
 <div class="property-content">
-<h3 class="property-title">Apartment</h3>
+<h3 class="property-title">Apartment – Bedroom 5</h3>
 <div class="property-price">$1500<span class="property-price-period">/month each</span></div>
 <p>Private standalone units perfect for individual professionals needing complete privacy.</p>
 <ul class="property-features">
@@ -965,16 +967,26 @@ margin: 0 5px;
 </div>
 
 <div class="copyright">
-<p>Designed for lineman students and traveling professionals</p>
+<p> Designed for lineman students and traveling professionals</p>
 </div>
 </div>
 </footer>
 
 <script>
-// Form submission handling - Fixed to target the actual form
+// Form submission handling (adapted to match Oro Dam pattern)
 document.querySelector('form').addEventListener('submit', function(e) {
-// Form will submit normally to FormSubmit.co
-console.log('Form submitted');
+e.preventDefault(); // prevent actual submit to show demo alert (matches Oro Dam interactive demo)
+
+// Get form values
+const name = document.getElementById('name').value;
+const email = document.getElementById('email').value;
+const propertySelect = document.getElementById('property');
+const property = propertySelect.options[propertySelect.selectedIndex].text;
+
+alert(`Thank you, ${name}! Your request for ${property} has been submitted. We'll contact you at ${email} within 24 hours.`);
+
+// Reset the form
+this.reset();
 });
 
 // Smooth scrolling for anchor links
