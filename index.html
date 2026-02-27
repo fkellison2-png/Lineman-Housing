@@ -553,32 +553,43 @@ transition: background-color 0.3s;
 background-color: #319795;
 }
 
-.tour-button-wrapper {
+/* Virtual Tour Button - Highly Visible */
+.tour-button-container {
 text-align: center;
-margin: 30px 0 20px;
+margin: 30px 0 40px;
+padding: 15px;
+background: linear-gradient(135deg, rgba(56, 178, 172, 0.1), rgba(26, 54, 93, 0.1));
+border-radius: 60px;
+max-width: 400px;
+margin-left: auto;
+margin-right: auto;
 }
 
 .virtual-tour-btn {
 background-color: var(--accent);
 color: white;
-padding: 1rem 2.5rem;
+padding: 1.2rem 3rem;
 border-radius: 50px;
-font-weight: 600;
-font-size: 1.2rem;
+font-weight: 700;
+font-size: 1.3rem;
 border: none;
 cursor: pointer;
 transition: all 0.3s;
-box-shadow: 0 4px 15px rgba(56, 178, 172, 0.3);
+box-shadow: 0 8px 25px rgba(56, 178, 172, 0.4);
+display: inline-block;
+text-decoration: none;
+border: 2px solid transparent;
 }
 
 .virtual-tour-btn:hover {
 background-color: #319795;
-transform: translateY(-2px);
-box-shadow: 0 6px 20px rgba(56, 178, 172, 0.4);
+transform: translateY(-3px) scale(1.02);
+box-shadow: 0 12px 30px rgba(56, 178, 172, 0.5);
 }
 
 .virtual-tour-btn i {
-margin-right: 10px;
+margin-right: 12px;
+font-size: 1.4rem;
 }
 
 /* Responsive */
@@ -623,6 +634,15 @@ align-items: center;
 width: 100%;
 max-width: 300px;
 text-align: center;
+}
+
+.tour-button-container {
+margin: 20px 15px;
+}
+
+.virtual-tour-btn {
+padding: 1rem 2rem;
+font-size: 1.1rem;
 }
 }
 </style>
@@ -677,15 +697,16 @@ text-align: center;
 <div class="section-title">
 <h2>Available Units</h2>
 <p>Located at 1134 14th Street, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
-
-<!-- Virtual Tour Button - Placed exactly where you requested -->
-<div class="tour-button-wrapper">
-<button onclick="window.location.href='#virtual-tour'" class="virtual-tour-btn">
-<i class="fas fa-vr-cardboard"></i> Take a Virtual Tour
-</button>
-</div>
 </div>
 
+<!-- VIRTUAL TOUR BUTTON - Placed exactly as requested, above property cards and below description -->
+<div class="tour-button-container">
+<a href="#virtual-tour" class="virtual-tour-btn">
+<i class="fas fa-vr-cardboard"></i> TAKE A VIRTUAL TOUR
+</a>
+</div>
+
+<!-- Property Cards Start Here -->
 <div class="property-grid">
 <!-- Front House -->
 <div class="property-card">
@@ -752,9 +773,9 @@ text-align: center;
 <div class="tour-container">
 <div class="tour-header">
 <h2>Lineman Housing Virtual Tour</h2>
-<button onclick="window.location.href='#properties'" class="close-tour">
+<a href="#properties" class="close-tour">
 <i class="fas fa-times"></i> Close Tour
-</button>
+</a>
 </div>
 
 <h3>14th Backhouse – Master Bedroom</h3>
