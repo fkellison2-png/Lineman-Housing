@@ -526,14 +526,55 @@ text-align: center;
 }
 }
 
-/* ----- Virtual tour section – EXACT same as Oro Dam page (just renamed) ----- */
-.virtual-tour-section {
-background-color: var(--light);
-padding: 3rem 0;
-border-top: 1px solid var(--gray);
-border-bottom: 1px solid var(--gray);
+/* ----- Modal (popup) styles for virtual tour ----- */
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.8);
+backdrop-filter: blur(6px);
 }
 
+.modal-content {
+background-color: var(--light);
+margin: 2% auto;
+padding: 20px;
+border-radius: 20px;
+width: 90%;
+max-width: 1200px;
+position: relative;
+box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+from {opacity: 0; transform: scale(0.95);}
+to {opacity: 1; transform: scale(1);}
+}
+
+.close-modal {
+position: absolute;
+right: 25px;
+top: 10px;
+color: var(--primary);
+font-size: 40px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.2s;
+line-height: 1;
+z-index: 1010;
+}
+
+.close-modal:hover {
+color: var(--accent);
+}
+
+/* Tour inside modal – exactly same as Oro Dam style */
 .virtual-tour-container {
 max-width: 1100px;
 margin: 0 auto;
@@ -542,7 +583,7 @@ padding: 0 20px;
 
 .tour-header {
 text-align: center;
-margin-bottom: 2.5rem;
+margin-bottom: 2rem;
 }
 
 .tour-header h2 {
@@ -602,8 +643,8 @@ user-select: none;
 background: var(--accent);
 }
 
-#prev { left: 10px; }
-#next { right: 10px; }
+#modalPrev { left: 10px; }
+#modalNext { right: 10px; }
 
 .thumbs {
 display: flex;
@@ -647,6 +688,8 @@ border-radius: 50px;
 box-shadow: 0 8px 16px rgba(0,0,0,0.1);
 transition: 0.2s;
 text-decoration: none;
+border: none;
+cursor: pointer;
 }
 
 .tour-button-wrapper .cta-button:hover {
@@ -682,7 +725,7 @@ scroll-behavior: smooth;
 </div>
 </header>
 
-<!-- Property Links (now active = 28 Service Street) -->
+<!-- Property Links (active = 28 Service Street) -->
 <section class="property-links">
 <div class="container property-links-container">
 <a href="index.html" class="property-link">1134 14th Street</a>
@@ -703,13 +746,15 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- VIRTUAL TOUR BUTTON (exact same as Oro Dam, links to #virtual-tour) -->
+<!-- VIRTUAL TOUR BUTTON (opens modal) -->
 <div class="tour-button-wrapper">
-<a href="#virtual-tour" class="cta-button"><i class="fas fa-camera"></i> Virtual Tour</a>
+<button id="openTourBtn" class="cta-button"><i class="fas fa-camera"></i> Virtual Tour</button>
 </div>
 
-<!-- VIRTUAL TOUR SECTION (exact same structure, now with Service Street images) -->
-<section id="virtual-tour" class="virtual-tour-section">
+<!-- MODAL POPUP for Virtual Tour (hidden until button click) -->
+<div id="tourModal" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
 <div class="virtual-tour-container">
 <div class="tour-header">
 <h2>Lineman Housing Virtual Tour</h2>
@@ -717,15 +762,16 @@ scroll-behavior: smooth;
 </div>
 
 <div class="viewer">
-<span id="prev" class="nav">&#10094;</span>
-<img id="mainImg" src="" alt="Property image">
-<span id="next" class="nav">&#10095;</span>
-<div class="caption" id="caption"></div>
+<span id="modalPrev" class="nav">&#10094;</span>
+<img id="modalMainImg" src="" alt="Property image">
+<span id="modalNext" class="nav">&#10095;</span>
+<div class="caption" id="modalCaption"></div>
 </div>
 
-<div class="thumbs" id="thumbs"></div>
+<div class="thumbs" id="modalThumbs"></div>
 </div>
-</section>
+</div>
+</div>
 
 <!-- Property Overview (Service Street content) -->
 <section class="section" id="properties">
@@ -889,7 +935,7 @@ scroll-behavior: smooth;
 </div>
 </footer>
 
-<!-- VIRTUAL TOUR SCRIPT – ONLY THE IMAGES ARE REPLACED WITH SERVICE STREET ONES (exactly the 27 images from your previous correct code) -->
+<!-- Modal Script with Service Street images -->
 <script>
 (function() {
 const slides = [
@@ -921,9 +967,9 @@ const slides = [
 {src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/service-tv2.png", title:"Service – TV 2"}
 ];
 let index = 0;
-const mainImg = document.getElementById("mainImg");
-const caption = document.getElementById("caption");
-const thumbs = document.getElementById("thumbs");
+const mainImg = document.getElementById("modalMainImg");
+const caption = document.getElementById("modalCaption");
+const thumbs = document.getElementById("modalThumbs");
 
 function loadSlide(i) {
 if (!mainImg) return;
@@ -931,12 +977,13 @@ index = (i + slides.length) % slides.length;
 mainImg.src = slides[index].src;
 if (caption) caption.textContent = slides[index].title;
 if (thumbs) {
-document.querySelectorAll(".thumbs img").forEach((img, idx) => {
+document.querySelectorAll("#modalThumbs img").forEach((img, idx) => {
 img.classList.toggle("active", idx === index);
 });
 }
 }
 
+// Build thumbnails inside modal
 if (thumbs) {
 slides.forEach((slide, i) => {
 const img = document.createElement("img");
@@ -947,10 +994,29 @@ thumbs.appendChild(img);
 });
 }
 
-document.getElementById("prev")?.addEventListener("click", () => loadSlide(index - 1));
-document.getElementById("next")?.addEventListener("click", () => loadSlide(index + 1));
+// Modal navigation
+document.getElementById("modalPrev")?.addEventListener("click", () => loadSlide(index - 1));
+document.getElementById("modalNext")?.addEventListener("click", () => loadSlide(index + 1));
 
-loadSlide(0);
+// Modal open/close logic
+const modal = document.getElementById("tourModal");
+const openBtn = document.getElementById("openTourBtn");
+const closeBtn = document.querySelector(".close-modal");
+
+openBtn.onclick = function() {
+modal.style.display = "block";
+loadSlide(0); // reset to first image when opened
+}
+
+closeBtn.onclick = function() {
+modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+}
 })();
 </script>
 
