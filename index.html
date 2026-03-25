@@ -480,118 +480,6 @@ color: #cbd5e0;
 font-size: 0.9rem;
 }
 
-/* Virtual Tour Styles */
-.tour-section {
-background-color: var(--light);
-padding: 3rem 0;
-}
-
-.tour-container {
-max-width: 900px;
-margin: auto;
-background: white;
-padding: 30px;
-border-radius: 10px;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-}
-
-.tour-container h2, .tour-container h3 {
-text-align: center;
-color: var(--primary);
-margin-top: 40px;
-margin-bottom: 20px;
-}
-
-.tour-container h2 {
-font-size: 2.2rem;
-margin-top: 20px;
-border-bottom: 3px solid var(--accent);
-padding-bottom: 15px;
-display: inline-block;
-}
-
-.tour-container h3 {
-font-size: 1.8rem;
-color: var(--secondary);
-background-color: var(--light);
-padding: 10px;
-border-radius: 8px;
-}
-
-.tour-container img {
-width: 100%;
-border-radius: 12px;
-margin-top: 20px;
-margin-bottom: 30px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-transition: transform 0.3s;
-}
-
-.tour-container img:hover {
-transform: scale(1.02);
-}
-
-.tour-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
-}
-
-.close-tour {
-background-color: var(--accent);
-color: white;
-border: none;
-padding: 0.7rem 1.5rem;
-border-radius: 4px;
-font-weight: 600;
-cursor: pointer;
-transition: background-color 0.3s;
-}
-
-.close-tour:hover {
-background-color: #319795;
-}
-
-/* Virtual Tour Button - Highly Visible */
-.tour-button-container {
-text-align: center;
-margin: 30px 0 40px;
-padding: 15px;
-background: linear-gradient(135deg, rgba(56, 178, 172, 0.1), rgba(26, 54, 93, 0.1));
-border-radius: 60px;
-max-width: 400px;
-margin-left: auto;
-margin-right: auto;
-}
-
-.virtual-tour-btn {
-background-color: var(--accent);
-color: white;
-padding: 1.2rem 3rem;
-border-radius: 50px;
-font-weight: 700;
-font-size: 1.3rem;
-border: none;
-cursor: pointer;
-transition: all 0.3s;
-box-shadow: 0 8px 25px rgba(56, 178, 172, 0.4);
-display: inline-block;
-text-decoration: none;
-border: 2px solid transparent;
-}
-
-.virtual-tour-btn:hover {
-background-color: #319795;
-transform: translateY(-3px) scale(1.02);
-box-shadow: 0 12px 30px rgba(56, 178, 172, 0.5);
-}
-
-.virtual-tour-btn i {
-margin-right: 12px;
-font-size: 1.4rem;
-}
-
 /* Responsive */
 @media (max-width: 768px) {
 .header-container {
@@ -635,15 +523,181 @@ width: 100%;
 max-width: 300px;
 text-align: center;
 }
-
-.tour-button-container {
-margin: 20px 15px;
 }
 
-.virtual-tour-btn {
-padding: 1rem 2rem;
+/* ----- Modal (popup) styles for virtual tour ----- */
+.modal {
+display: none;
+position: fixed;
+z-index: 1000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+overflow: auto;
+background-color: rgba(0,0,0,0.8);
+backdrop-filter: blur(6px);
+}
+
+.modal-content {
+background-color: var(--light);
+margin: 2% auto;
+padding: 20px;
+border-radius: 20px;
+width: 90%;
+max-width: 1200px;
+position: relative;
+box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+animation: modalFadeIn 0.3s;
+}
+
+@keyframes modalFadeIn {
+from {opacity: 0; transform: scale(0.95);}
+to {opacity: 1; transform: scale(1);}
+}
+
+.close-modal {
+position: absolute;
+right: 25px;
+top: 10px;
+color: var(--primary);
+font-size: 40px;
+font-weight: bold;
+cursor: pointer;
+transition: 0.2s;
+line-height: 1;
+z-index: 1010;
+}
+
+.close-modal:hover {
+color: var(--accent);
+}
+
+/* Tour inside modal – exactly same as Service Street style */
+.virtual-tour-container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+.tour-header {
+text-align: center;
+margin-bottom: 2rem;
+}
+
+.tour-header h2 {
+font-size: 2.5rem;
+color: var(--primary);
+margin-bottom: 0.5rem;
+}
+
+.tour-header p {
+color: var(--secondary);
 font-size: 1.1rem;
 }
+
+.viewer {
+position: relative;
+text-align: center;
+background: white;
+border-radius: 12px;
+padding: 20px;
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+margin-bottom: 20px;
+}
+
+.viewer img {
+max-width: 100%;
+max-height: 70vh;
+border-radius: 8px;
+border: 2px solid var(--gray);
+}
+
+.caption {
+margin-top: 12px;
+font-size: 1.1rem;
+font-weight: 500;
+color: var(--primary);
+}
+
+.nav {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+font-size: 2.5rem;
+background: var(--primary);
+color: white;
+width: 50px;
+height: 50px;
+line-height: 48px;
+border-radius: 50%;
+cursor: pointer;
+transition: background 0.2s;
+box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+text-align: center;
+user-select: none;
+}
+
+.nav:hover {
+background: var(--accent);
+}
+
+#modalPrev { left: 10px; }
+#modalNext { right: 10px; }
+
+.thumbs {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 12px;
+padding: 15px 0 5px;
+}
+
+.thumbs img {
+width: 100px;
+height: 70px;
+object-fit: cover;
+border-radius: 6px;
+cursor: pointer;
+border: 3px solid transparent;
+transition: border 0.2s, transform 0.2s;
+box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.thumbs img:hover {
+transform: scale(1.05);
+}
+
+.thumbs img.active {
+border-color: var(--accent);
+}
+
+.tour-button-wrapper {
+display: flex;
+justify-content: center;
+margin: 2rem 0 0.5rem;
+}
+
+.tour-button-wrapper .cta-button {
+background-color: var(--accent);
+color: white;
+padding: 1rem 3rem;
+font-size: 1.5rem;
+border-radius: 50px;
+box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+transition: 0.2s;
+text-decoration: none;
+border: none;
+cursor: pointer;
+}
+
+.tour-button-wrapper .cta-button:hover {
+background-color: #319795;
+transform: translateY(-3px);
+}
+
+html {
+scroll-behavior: smooth;
 }
 </style>
 </head>
@@ -655,7 +709,7 @@ font-size: 1.1rem;
 <i class="fas fa-home"></i>
 <div>
 <span>Lineman Student Housing</span>
-<div class="tagline">Premium Housing for Lineman Students and Traveling Professionals</div>
+<div class="tagline">Premium Housing for Traveling Professionals</div>
 </div>
 </div>
 <nav>
@@ -691,19 +745,39 @@ font-size: 1.1rem;
 </div>
 </section>
 
+<!-- VIRTUAL TOUR BUTTON (opens modal) -->
+<div class="tour-button-wrapper">
+<button id="openTourBtn" class="cta-button"><i class="fas fa-camera"></i> Virtual Tour</button>
+</div>
+
+<!-- MODAL POPUP for Virtual Tour (hidden until button click) -->
+<div id="tourModal" class="modal">
+<div class="modal-content">
+<span class="close-modal">&times;</span>
+<div class="virtual-tour-container">
+<div class="tour-header">
+<h2>Lineman Housing Virtual Tour</h2>
+<p>Explore 1134 14th Street through our interactive gallery</p>
+</div>
+
+<div class="viewer">
+<span id="modalPrev" class="nav">&#10094;</span>
+<img id="modalMainImg" src="" alt="Property image">
+<span id="modalNext" class="nav">&#10095;</span>
+<div class="caption" id="modalCaption"></div>
+</div>
+
+<div class="thumbs" id="modalThumbs"></div>
+</div>
+</div>
+</div>
+
 <!-- Property Overview -->
 <section class="section" id="properties">
 <div class="container">
 <div class="section-title">
 <h2>Available Units</h2>
 <p>Located at 1134 14th Street, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
-</div>
-
-<!-- VIRTUAL TOUR BUTTON - Placed exactly as requested, above property cards and below description -->
-<div class="tour-button-container">
-<a href="#virtual-tour" class="virtual-tour-btn">
-<i class="fas fa-vr-cardboard"></i> TAKE A VIRTUAL TOUR
-</a>
 </div>
 
 <!-- Property Cards Start Here -->
@@ -763,37 +837,6 @@ font-size: 1.1rem;
 </ul>
 </div>
 </div>
-</div>
-</div>
-</section>
-
-<!-- Virtual Tour Section -->
-<section class="tour-section" id="virtual-tour">
-<div class="container">
-<div class="tour-container">
-<div class="tour-header">
-<h2>Lineman Housing Virtual Tour</h2>
-<a href="#properties" class="close-tour">
-<i class="fas fa-times"></i> Close Tour
-</a>
-</div>
-
-<h3>14th Backhouse – Master Bedroom</h3>
-<img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20backhouse%20master.png" alt="Master Bedroom">
-<img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20backhouse%20master2.png" alt="Master Bedroom 2">
-
-<h3>14th Backhouse – Interior</h3>
-<img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20backhouse.png" alt="Backhouse Interior">
-
-<h3>14th Tiny Home – Interior</h3>
-
-<img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20bed.png" alt="Tiny Home Bed">
-<img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20bed2.png" alt="Tiny Home Bed 2">
-<img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20ktchn.png" alt="Tiny Home Kitchen">
-
-<h3>14th Tiny Home – Exterior</h3>
-<img src="https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20outside.png" alt="Tiny Home Exterior">
-
 </div>
 </div>
 </section>
@@ -877,14 +920,14 @@ font-size: 1.1rem;
 <td><strong>Tiny Home 1</strong></td>
 <td>Complete Unit</td>
 <td>$1400</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
+<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Booked</span></td>
 <td>All utilities included</td>
 </tr>
 <tr>
 <td><strong>Tiny Home 2</strong></td>
 <td>Complete Unit</td>
 <td>$1400</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
+<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Booked</span></td>
 <td>All utilities included</td>
 </tr>
 </tbody>
@@ -1090,21 +1133,82 @@ font-size: 1.1rem;
 </div>
 </footer>
 
+<!-- Modal Script with 14th Street images -->
 <script>
-// Smooth scrolling for anchor links
+(function() {
+const slides = [
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20backhouse%20master.png", title:"14th Backhouse – Master Bedroom"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20backhouse%20master2.png", title:"14th Backhouse – Master Bedroom 2"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20backhouse.png", title:"14th Backhouse – Interior"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20bed.png", title:"14th Tiny Home – Bed"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20bed2.png", title:"14th Tiny Home – Bed 2"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20ktchn.png", title:"14th Tiny Home – Kitchen"},
+{src:"https://raw.githubusercontent.com/fkellison2-png/Lineman-Housing/main/14th%20tinyhome%20outside.png", title:"14th Tiny Home – Exterior"}
+];
+let index = 0;
+const mainImg = document.getElementById("modalMainImg");
+const caption = document.getElementById("modalCaption");
+const thumbs = document.getElementById("modalThumbs");
+
+function loadSlide(i) {
+if (!mainImg) return;
+index = (i + slides.length) % slides.length;
+mainImg.src = slides[index].src;
+if (caption) caption.textContent = slides[index].title;
+if (thumbs) {
+document.querySelectorAll("#modalThumbs img").forEach((img, idx) => {
+img.classList.toggle("active", idx === index);
+});
+}
+}
+
+// Build thumbnails inside modal
+if (thumbs) {
+slides.forEach((slide, i) => {
+const img = document.createElement("img");
+img.src = slide.src;
+img.alt = slide.title;
+img.onclick = () => loadSlide(i);
+thumbs.appendChild(img);
+});
+}
+
+// Modal navigation
+document.getElementById("modalPrev")?.addEventListener("click", () => loadSlide(index - 1));
+document.getElementById("modalNext")?.addEventListener("click", () => loadSlide(index + 1));
+
+// Modal open/close logic
+const modal = document.getElementById("tourModal");
+const openBtn = document.getElementById("openTourBtn");
+const closeBtn = document.querySelector(".close-modal");
+
+openBtn.onclick = function() {
+modal.style.display = "block";
+loadSlide(0); // reset to first image when opened
+}
+
+closeBtn.onclick = function() {
+modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+if (event.target == modal) {
+modal.style.display = "none";
+}
+}
+})();
+</script>
+
+<!-- Smooth scroll -->
+<script>
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function(e) {
 e.preventDefault();
-
 const targetId = this.getAttribute('href');
 if(targetId === '#') return;
-
 const targetElement = document.querySelector(targetId);
 if(targetElement) {
-window.scrollTo({
-top: targetElement.offsetTop - 80,
-behavior: 'smooth'
-});
+window.scrollTo({ top: targetElement.offsetTop - 80, behavior: 'smooth' });
 }
 });
 });
