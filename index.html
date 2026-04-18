@@ -965,12 +965,118 @@ padding: 0.7rem 1.5rem;
 <div class="contact-detail"><i class="fas fa-clock"></i><div><strong>Response Time</strong><p>We respond to all inquiries within 24 hours, 7 days a week.</p></div></div>
 </div>
 <form action="https://api.web3forms.com/submit" method="POST">
+<!-- Replace YOUR_ACCESS_KEY_HERE with the key from web3forms.com -->
 <input type="hidden" name="access_key" value="5a65ae82-8484-4cb6-9bbb-0b52f75c29ed">
-<input type="text" name="name" required>
-<input type="email" name="email" required>
-<textarea name="message" required></textarea>
-<button type="submit">Submit Form</button>
-</form></div>
+<input type="hidden" name="subject" value="New Housing Inquiry - 28 Service Street">
+<input type="hidden" name="from_name" value="Lineman Housing Website">
+
+<!-- Spam prevention (honeypot) - leave this exactly as is -->
+<input type="checkbox" name="botcheck" style="display: none;">
+
+<div class="form-group">
+<label for="name">Full Name</label>
+<input type="text" id="name" name="name" required>
+</div>
+
+<div class="form-group">
+<label for="email">Email Address</label>
+<input type="email" id="email" name="email" required>
+</div>
+
+<div class="form-group">
+<label for="phone">Phone Number</label>
+<input type="tel" id="phone" name="phone" required>
+</div>
+
+<div class="form-group">
+<label for="property">Property Interest</label>
+<select id="property" name="property" required>
+<option value="14th">1134 14th Street</option>
+<option value="oro">1551 Oro Dam Blvd W</option>
+<option value="service" selected>28 Service Street</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="unit">Unit/Room Interest</label>
+<select id="unit" name="unit" required>
+<option value="" disabled selected>Select preferred accommodation</option>
+<option value="unit1">Unit 1 ($1,250/month)</option>
+<option value="unit2">Unit 2 ($1,400/month)</option>
+<option value="unit5">Unit 5 ($1,400/month)</option>
+<option value="unit7">Unit 7 ($1,500/month)</option>
+</select>
+</div>
+
+<div class="form-group">
+<label for="dates">Preferred Dates / Duration</label>
+<input type="text" id="dates" name="dates" placeholder="e.g., March 15 - June 30, 2024" required>
+</div>
+
+<div class="form-group">
+<label for="message">Additional Information</label>
+<textarea id="message" name="message" placeholder="Tell us about your crew size, special requirements, or any questions..."></textarea>
+</div>
+
+<!-- Success message (optional - shows on same page) -->
+<div id="form-status" style="margin-top: 1rem; padding: 0.8rem; border-radius: 8px; display: none;"></div>
+
+<button type="submit" class="button button-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
+<i class="fas fa-paper-plane"></i> Submit Request
+</button>
+</form>
+
+<!-- Add this script right after the form for better UX -->
+<script>
+const form = document.querySelector('form');
+const statusDiv = document.getElementById('form-status');
+
+form.addEventListener('submit', async (e) => {
+e.preventDefault();
+
+// Show loading state
+const submitBtn = form.querySelector('button[type="submit"]');
+const originalText = submitBtn.innerHTML;
+submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+submitBtn.disabled = true;
+
+try {
+const formData = new FormData(form);
+const response = await fetch(form.action, {
+method: 'POST',
+body: formData,
+headers: { 'Accept': 'application/json' }
+});
+
+const result = await response.json();
+
+if (result.success) {
+statusDiv.style.display = 'block';
+statusDiv.style.backgroundColor = '#d4edda';
+statusDiv.style.color = '#155724';
+statusDiv.style.border = '1px solid #c3e6cb';
+statusDiv.innerHTML = '<i class="fas fa-check-circle"></i> Thank you! Your inquiry has been sent. We\'ll respond within 24 hours.';
+form.reset();
+} else {
+throw new Error('Form submission failed');
+}
+} catch (error) {
+statusDiv.style.display = 'block';
+statusDiv.style.backgroundColor = '#f8d7da';
+statusDiv.style.color = '#721c24';
+statusDiv.style.border = '1px solid #f5c6cb';
+statusDiv.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Something went wrong. Please try again or call us directly.';
+} finally {
+submitBtn.innerHTML = originalText;
+submitBtn.disabled = false;
+
+// Auto-hide status after 5 seconds
+setTimeout(() => {
+statusDiv.style.display = 'none';
+}, 5000);
+}
+});
+</script>
 </div>
 </section>
 
