@@ -1,92 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  <link rel="canonical" href="https://premiernlclinemanhousingoforoville.com/">
+<title>1551 Oro Dam Blvd W | NLC Lineman Student Housing | PremierNLCLinemanHousingofOroville</title>
+<meta name="description" content="Premium lineman student housing at 1551 Oro Dam Blvd W, Oroville. Fully furnished rooms near Northwest Lineman College. Book your short-term rental today.">
+<link rel="canonical" href="https://premiernlclinemanhousingoforoville.com/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>1551 Oro Dam Blvd W | Lineman Student Housing</title>
+
+<!-- Fonts & Icons -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+
 <style>
 * {
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 :root {
---primary: #1a365d;
---secondary: #2d3748;
---accent: #38b2ac;
---light: #f7fafc;
+--primary: #0f2b3d;
+--primary-dark: #0a1e2c;
+--secondary: #2c3e50;
+--accent: #00b4aa;
+--accent-dark: #009688;
+--light: #f8fafc;
 --gray: #e2e8f0;
---available: #48bb78;
---booked: #f56565;
---pending: #ed8936;
+--gray-dark: #94a3b8;
+--available: #10b981;
+--booked: #ef4444;
+--pending: #f59e0b;
+--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+--shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
 }
 
 body {
+font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 line-height: 1.6;
 color: var(--secondary);
-background-color: #f9f9f9;
+background-color: #ffffff;
 }
 
 .container {
-max-width: 1200px;
+max-width: 1280px;
 margin: 0 auto;
-padding: 0 20px;
+padding: 0 24px;
 }
 
-/* Header */
+/* Header Styles */
 header {
-background: linear-gradient(135deg, var(--primary), #2d3748);
+background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 color: white;
-padding: 1.5rem 0;
+padding: 1rem 0;
 position: sticky;
 top: 0;
-z-index: 100;
-box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+z-index: 1000;
+backdrop-filter: blur(10px);
+box-shadow: var(--shadow-lg);
 }
 
 .header-container {
 display: flex;
 justify-content: space-between;
 align-items: center;
+flex-wrap: wrap;
+gap: 1rem;
 }
 
 .logo {
-font-size: 1.8rem;
+font-size: 1.5rem;
 font-weight: 700;
 display: flex;
 align-items: center;
+gap: 12px;
 }
 
 .logo i {
+font-size: 2rem;
 color: var(--accent);
-margin-right: 10px;
 }
 
-.tagline {
-font-size: 0.9rem;
-opacity: 0.9;
-margin-top: 3px;
+.logo-text span {
+font-size: 0.85rem;
+opacity: 0.85;
+display: block;
+font-weight: 400;
 }
 
 nav ul {
 display: flex;
 list-style: none;
-}
-
-nav li {
-margin-left: 1.5rem;
+gap: 2rem;
+align-items: center;
+flex-wrap: wrap;
 }
 
 nav a {
 color: white;
 text-decoration: none;
 font-weight: 500;
-transition: color 0.3s;
+transition: all 0.3s ease;
+position: relative;
+}
+
+nav a:not(.cta-button):after {
+content: '';
+position: absolute;
+bottom: -5px;
+left: 0;
+width: 0;
+height: 2px;
+background: var(--accent);
+transition: width 0.3s ease;
+}
+
+nav a:not(.cta-button):hover:after {
+width: 100%;
 }
 
 nav a:hover {
@@ -94,68 +125,83 @@ color: var(--accent);
 }
 
 .cta-button {
-background-color: var(--accent);
-color: white;
-padding: 0.7rem 1.5rem;
-border-radius: 4px;
+background: var(--accent);
+padding: 0.6rem 1.3rem;
+border-radius: 8px;
 font-weight: 600;
-transition: background-color 0.3s;
+transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-background-color: #319795;
-color: white;
+background: var(--accent-dark);
+transform: translateY(-2px);
+box-shadow: var(--shadow-md);
+}
+
+.cta-button:hover:after {
+display: none;
 }
 
 /* Property Links */
 .property-links {
-background-color: var(--light);
+background: var(--light);
 padding: 1rem 0;
 border-bottom: 1px solid var(--gray);
+position: sticky;
+top: 70px;
+z-index: 99;
+backdrop-filter: blur(10px);
 }
 
 .property-links-container {
 display: flex;
 justify-content: center;
-gap: 1.5rem;
+gap: 1rem;
 flex-wrap: wrap;
 }
 
 .property-link {
-padding: 0.5rem 1rem;
-background-color: white;
-border-radius: 4px;
+padding: 0.6rem 1.2rem;
+background: white;
+border-radius: 10px;
 text-decoration: none;
 color: var(--primary);
 font-weight: 500;
 border: 2px solid transparent;
-transition: all 0.3s;
+transition: all 0.3s ease;
+box-shadow: var(--shadow-sm);
 }
 
 .property-link.active {
 border-color: var(--accent);
-background-color: rgba(56, 178, 172, 0.1);
+background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+color: white;
 }
 
-.property-link:hover {
+.property-link:hover:not(.active) {
 border-color: var(--accent);
 transform: translateY(-2px);
+box-shadow: var(--shadow-md);
 }
 
 /* Hero Section */
 .hero {
-background: linear-gradient(rgba(26, 54, 93, 0.85), rgba(26, 54, 93, 0.9)), url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+background: linear-gradient(135deg, rgba(15, 43, 61, 0.92), rgba(10, 30, 44, 0.96)),
+url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
 background-size: cover;
 background-position: center;
 color: white;
-padding: 5rem 0;
+padding: 6rem 0;
 text-align: center;
+position: relative;
 }
 
 .hero h1 {
-font-size: 2.5rem;
-margin-bottom: 1rem;
+font-size: 3rem;
+font-weight: 800;
+margin-bottom: 1.5rem;
 line-height: 1.2;
+animation: fadeInUp 0.8s ease;
 }
 
 .hero p {
@@ -163,85 +209,101 @@ font-size: 1.2rem;
 max-width: 700px;
 margin: 0 auto 2rem;
 opacity: 0.95;
+animation: fadeInUp 0.8s ease 0.1s backwards;
 }
 
 .hero-buttons {
 display: flex;
 justify-content: center;
 gap: 1rem;
-margin-top: 2rem;
+flex-wrap: wrap;
+animation: fadeInUp 0.8s ease 0.2s backwards;
 }
 
 .button {
 padding: 0.9rem 2rem;
-border-radius: 4px;
+border-radius: 12px;
 font-weight: 600;
 text-decoration: none;
+transition: all 0.3s ease;
+cursor: pointer;
 display: inline-block;
-transition: all 0.3s;
 }
 
 .button-primary {
-background-color: var(--accent);
+background: var(--accent);
 color: white;
+box-shadow: var(--shadow-md);
 }
 
 .button-secondary {
-background-color: transparent;
+background: transparent;
 color: white;
 border: 2px solid white;
 }
 
-.button-primary:hover, .button-secondary:hover {
+.button-primary:hover {
+background: var(--accent-dark);
 transform: translateY(-3px);
-box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+box-shadow: var(--shadow-lg);
 }
 
-/* Property Overview */
+.button-secondary:hover {
+background: white;
+color: var(--primary);
+transform: translateY(-3px);
+}
+
+/* Section Styles */
 .section {
 padding: 5rem 0;
 }
 
+.section:nth-child(even) {
+background-color: var(--light);
+}
+
 .section-title {
 text-align: center;
-margin-bottom: 3rem;
+margin-bottom: 3.5rem;
 }
 
 .section-title h2 {
 font-size: 2.5rem;
 color: var(--primary);
 margin-bottom: 1rem;
+font-weight: 700;
 }
 
 .section-title p {
-color: var(--secondary);
+color: var(--gray-dark);
 max-width: 700px;
 margin: 0 auto;
 font-size: 1.1rem;
 }
 
+/* Property Cards */
 .property-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
 gap: 2rem;
-margin-top: 2rem;
 }
 
 .property-card {
-background-color: white;
-border-radius: 8px;
+background: white;
+border-radius: 20px;
 overflow: hidden;
-box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-transition: transform 0.3s, box-shadow 0.3s;
+box-shadow: var(--shadow-md);
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .property-card:hover {
-transform: translateY(-10px);
-box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+transform: translateY(-12px);
+box-shadow: var(--shadow-xl);
 }
 
 .property-image {
-height: 200px;
+height: 240px;
 background-size: cover;
 background-position: center;
 position: relative;
@@ -249,58 +311,63 @@ position: relative;
 
 .status-badge {
 position: absolute;
-top: 15px;
-right: 15px;
-padding: 0.3rem 0.8rem;
-border-radius: 20px;
+top: 16px;
+right: 16px;
+padding: 0.4rem 1rem;
+border-radius: 30px;
 color: white;
 font-weight: 600;
 font-size: 0.8rem;
+backdrop-filter: blur(4px);
+box-shadow: var(--shadow-sm);
 }
 
 .status-available {
-background-color: var(--available);
+background: var(--available);
 }
 
 .status-booked {
-background-color: var(--booked);
+background: var(--booked);
 }
 
 .status-pending {
-background-color: var(--pending);
+background: var(--pending);
 }
 
 .property-content {
-padding: 1.5rem;
+padding: 1.8rem;
 }
 
 .property-title {
-font-size: 1.4rem;
+font-size: 1.5rem;
 color: var(--primary);
 margin-bottom: 0.5rem;
+font-weight: 700;
 }
 
 .property-price {
-font-size: 1.8rem;
+font-size: 2rem;
 color: var(--accent);
-font-weight: 700;
-margin: 0.5rem 0;
+font-weight: 800;
+margin: 0.75rem 0;
 }
 
 .property-price-period {
-font-size: 1rem;
-color: var(--secondary);
+font-size: 0.9rem;
+color: var(--gray-dark);
 font-weight: normal;
 }
 
 .property-features {
 list-style: none;
-margin: 1rem 0;
+margin: 1.2rem 0;
 }
 
 .property-features li {
-padding: 0.3rem 0;
+padding: 0.5rem 0;
 border-bottom: 1px solid var(--gray);
+display: flex;
+align-items: center;
 }
 
 .property-features li:last-child {
@@ -309,102 +376,113 @@ border-bottom: none;
 
 .property-features i {
 color: var(--accent);
-margin-right: 10px;
-width: 20px;
+margin-right: 12px;
+width: 22px;
 }
 
-/* Room Details */
-.room-details {
-background-color: var(--light);
-}
-
+/* Room Table */
 .room-table {
 width: 100%;
-background-color: white;
-border-radius: 8px;
+background: white;
+border-radius: 16px;
 overflow: hidden;
-box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+box-shadow: var(--shadow-md);
 border-collapse: collapse;
 }
 
 .room-table th {
-background-color: var(--primary);
+background: var(--primary);
 color: white;
-padding: 1rem;
+padding: 1.2rem;
 text-align: left;
+font-weight: 600;
 }
 
 .room-table td {
-padding: 1rem;
+padding: 1rem 1.2rem;
 border-bottom: 1px solid var(--gray);
 }
 
-.room-table tr:last-child td {
-border-bottom: none;
+.room-table tr:hover td {
+background: rgba(0, 180, 170, 0.05);
 }
 
-/* Amenities */
-.amenities {
-background-color: white;
-}
-
+/* Amenities Grid */
 .amenities-grid {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-gap: 1.5rem;
-margin-top: 2rem;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 2rem;
 }
 
 .amenity-item {
-background-color: var(--light);
-padding: 1.5rem;
-border-radius: 8px;
+background: white;
+padding: 2rem;
+border-radius: 20px;
 text-align: center;
-box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+transition: all 0.3s ease;
+box-shadow: var(--shadow-sm);
+border: 1px solid var(--gray);
+}
+
+.amenity-item:hover {
+transform: translateY(-5px);
+box-shadow: var(--shadow-lg);
+border-color: var(--accent);
 }
 
 .amenity-icon {
-font-size: 2.5rem;
+font-size: 3rem;
 color: var(--accent);
-margin-bottom: 1rem;
+margin-bottom: 1.2rem;
 }
 
-/* Contact Form */
-.contact-section {
-background-color: var(--light);
+.amenity-item h3 {
+font-size: 1.3rem;
+margin-bottom: 0.8rem;
+color: var(--primary);
 }
 
+/* Contact Section */
 .contact-container {
 display: grid;
-grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
 gap: 3rem;
-align-items: center;
 }
 
 .contact-info h3 {
 color: var(--primary);
 margin-bottom: 1.5rem;
-font-size: 1.8rem;
+font-size: 2rem;
+font-weight: 700;
 }
 
 .contact-detail {
 display: flex;
 align-items: flex-start;
-margin-bottom: 1.5rem;
+gap: 1rem;
+margin-bottom: 1.8rem;
+padding: 1rem;
+background: white;
+border-radius: 12px;
+transition: all 0.3s ease;
+}
+
+.contact-detail:hover {
+transform: translateX(5px);
+box-shadow: var(--shadow-sm);
 }
 
 .contact-detail i {
 color: var(--accent);
-font-size: 1.2rem;
-margin-right: 15px;
-margin-top: 5px;
+font-size: 1.3rem;
+margin-top: 3px;
 }
 
 form {
-background-color: white;
+background: white;
 padding: 2rem;
-border-radius: 8px;
-box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+border-radius: 24px;
+box-shadow: var(--shadow-lg);
 }
 
 .form-group {
@@ -413,17 +491,25 @@ margin-bottom: 1.5rem;
 
 label {
 display: block;
-margin-bottom: 0.5rem;
-font-weight: 500;
+margin-bottom: 0.6rem;
+font-weight: 600;
 color: var(--primary);
 }
 
 input, select, textarea {
 width: 100%;
-padding: 0.8rem;
-border: 1px solid var(--gray);
-border-radius: 4px;
+padding: 0.9rem;
+border: 2px solid var(--gray);
+border-radius: 12px;
 font-size: 1rem;
+transition: all 0.3s ease;
+font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+outline: none;
+border-color: var(--accent);
+box-shadow: 0 0 0 3px rgba(0, 180, 170, 0.1);
 }
 
 textarea {
@@ -433,7 +519,7 @@ resize: vertical;
 
 /* Footer */
 footer {
-background-color: var(--primary);
+background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
 color: white;
 padding: 3rem 0 1.5rem;
 }
@@ -446,14 +532,14 @@ margin-bottom: 2rem;
 }
 
 .footer-logo {
-font-size: 1.8rem;
+font-size: 1.5rem;
 font-weight: 700;
 margin-bottom: 1rem;
 }
 
 .footer-links h4, .footer-contact h4 {
-margin-bottom: 1.5rem;
-font-size: 1.2rem;
+margin-bottom: 1.2rem;
+font-size: 1.1rem;
 }
 
 .footer-links ul {
@@ -461,7 +547,7 @@ list-style: none;
 }
 
 .footer-links li {
-margin-bottom: 0.8rem;
+margin-bottom: 0.7rem;
 }
 
 .footer-links a {
@@ -471,155 +557,76 @@ transition: color 0.3s;
 }
 
 .footer-links a:hover {
-color: white;
+color: var(--accent);
 }
 
 .copyright {
 text-align: center;
 padding-top: 1.5rem;
-border-top: 1px solid #2d3748;
-color: #cbd5e0;
+border-top: 1px solid rgba(255,255,255,0.1);
 font-size: 0.9rem;
+opacity: 0.8;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-.header-container {
-flex-direction: column;
-text-align: center;
-}
-
-nav ul {
-margin-top: 1.5rem;
-flex-wrap: wrap;
-justify-content: center;
-}
-
-nav li {
-margin: 0 0.8rem;
-margin-bottom: 0.5rem;
-}
-
-.hero h1 {
-font-size: 2.2rem;
-}
-
-.hero-buttons {
-flex-direction: column;
-align-items: center;
-}
-
-.button {
-width: 100%;
-max-width: 300px;
-margin-bottom: 1rem;
-}
-
-.property-links-container {
-flex-direction: column;
-align-items: center;
-}
-
-.property-link {
-width: 100%;
-max-width: 300px;
-text-align: center;
-}
-}
-
-/* ----- Modal (popup) styles for virtual tour ----- */
+/* Modal Styles */
 .modal {
 display: none;
 position: fixed;
-z-index: 1000;
+z-index: 2000;
 left: 0;
 top: 0;
 width: 100%;
 height: 100%;
-overflow: auto;
-background-color: rgba(0,0,0,0.8);
-backdrop-filter: blur(6px);
+background-color: rgba(0,0,0,0.9);
+backdrop-filter: blur(8px);
 }
 
 .modal-content {
-background-color: var(--light);
+background: var(--light);
 margin: 2% auto;
 padding: 20px;
-border-radius: 20px;
+border-radius: 28px;
 width: 90%;
 max-width: 1200px;
 position: relative;
-box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-animation: modalFadeIn 0.3s;
+animation: modalFadeIn 0.3s ease;
 }
 
 @keyframes modalFadeIn {
-from {opacity: 0; transform: scale(0.95);}
-to {opacity: 1; transform: scale(1);}
+from { opacity: 0; transform: scale(0.95); }
+to { opacity: 1; transform: scale(1); }
 }
 
 .close-modal {
 position: absolute;
 right: 25px;
-top: 10px;
-color: var(--primary);
+top: 15px;
 font-size: 40px;
 font-weight: bold;
 cursor: pointer;
 transition: 0.2s;
-line-height: 1;
-z-index: 1010;
+color: var(--primary);
+z-index: 10;
 }
 
 .close-modal:hover {
 color: var(--accent);
-}
-
-/* Tour inside modal – exactly same as Service Street style */
-.virtual-tour-container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 0 20px;
-}
-
-.tour-header {
-text-align: center;
-margin-bottom: 2rem;
-}
-
-.tour-header h2 {
-font-size: 2.5rem;
-color: var(--primary);
-margin-bottom: 0.5rem;
-}
-
-.tour-header p {
-color: var(--secondary);
-font-size: 1.1rem;
+transform: scale(1.1);
 }
 
 .viewer {
 position: relative;
 text-align: center;
 background: white;
-border-radius: 12px;
+border-radius: 20px;
 padding: 20px;
-box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 margin-bottom: 20px;
 }
 
 .viewer img {
 max-width: 100%;
-max-height: 70vh;
-border-radius: 8px;
-border: 2px solid var(--gray);
-}
-
-.caption {
-margin-top: 12px;
-font-size: 1.1rem;
-font-weight: 500;
-color: var(--primary);
+max-height: 65vh;
+border-radius: 12px;
 }
 
 .nav {
@@ -634,14 +641,13 @@ height: 50px;
 line-height: 48px;
 border-radius: 50%;
 cursor: pointer;
-transition: background 0.2s;
-box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+transition: all 0.2s;
 text-align: center;
-user-select: none;
 }
 
 .nav:hover {
 background: var(--accent);
+transform: translateY(-50%) scale(1.05);
 }
 
 #modalPrev { left: 10px; }
@@ -652,18 +658,17 @@ display: flex;
 flex-wrap: wrap;
 justify-content: center;
 gap: 12px;
-padding: 15px 0 5px;
+padding: 15px 0;
 }
 
 .thumbs img {
 width: 100px;
 height: 70px;
 object-fit: cover;
-border-radius: 6px;
+border-radius: 10px;
 cursor: pointer;
 border: 3px solid transparent;
-transition: border 0.2s, transform 0.2s;
-box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+transition: all 0.2s;
 }
 
 .thumbs img:hover {
@@ -677,41 +682,94 @@ border-color: var(--accent);
 .tour-button-wrapper {
 display: flex;
 justify-content: center;
-margin: 2rem 0 0.5rem;
+margin: -2rem 0 2rem;
 }
 
 .tour-button-wrapper .cta-button {
-background-color: var(--accent);
-color: white;
-padding: 1rem 3rem;
-font-size: 1.5rem;
+background: var(--accent);
+padding: 1rem 2.5rem;
+font-size: 1.2rem;
 border-radius: 50px;
-box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-transition: 0.2s;
-text-decoration: none;
+box-shadow: var(--shadow-lg);
 border: none;
 cursor: pointer;
 }
 
-.tour-button-wrapper .cta-button:hover {
-background-color: #319795;
-transform: translateY(-3px);
+/* Animations */
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(30px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
 }
 
-html {
-scroll-behavior: smooth;
+/* Responsive */
+@media (max-width: 768px) {
+.header-container {
+flex-direction: column;
+text-align: center;
+}
+
+nav ul {
+justify-content: center;
+gap: 1rem;
+}
+
+.hero h1 {
+font-size: 2rem;
+}
+
+.hero p {
+font-size: 1rem;
+}
+
+.section-title h2 {
+font-size: 1.8rem;
+}
+
+.property-links {
+top: auto;
+}
+
+.room-table {
+display: block;
+overflow-x: auto;
+}
+
+.property-grid {
+grid-template-columns: 1fr;
+}
+}
+
+@media (max-width: 480px) {
+.container {
+padding: 0 16px;
+}
+
+.hero {
+padding: 4rem 0;
+}
+
+.button {
+padding: 0.7rem 1.5rem;
+}
 }
 </style>
 </head>
 <body>
+
 <!-- Header -->
 <header>
 <div class="container header-container">
 <div class="logo">
 <i class="fas fa-home"></i>
-<div>
+<div class="logo-text">
 <span>Lineman Student Housing</span>
-<div class="tagline">Premium Housing for Traveling Professionals</div>
+<span>Premium Housing for Traveling Professionals</span>
 </div>
 </div>
 <nav>
@@ -747,12 +805,12 @@ scroll-behavior: smooth;
 </div>
 </section>
 
-<!-- VIRTUAL TOUR BUTTON (opens modal) -->
+<!-- VIRTUAL TOUR BUTTON -->
 <div class="tour-button-wrapper">
 <button id="openTourBtn" class="cta-button"><i class="fas fa-camera"></i> Virtual Tour</button>
 </div>
 
-<!-- MODAL POPUP for Virtual Tour (hidden until button click) -->
+<!-- MODAL POPUP for Virtual Tour -->
 <div id="tourModal" class="modal">
 <div class="modal-content">
 <span class="close-modal">&times;</span>
@@ -761,14 +819,12 @@ scroll-behavior: smooth;
 <h2>Lineman Housing Virtual Tour</h2>
 <p>Explore 1551 Oro Dam Blvd W through our interactive gallery</p>
 </div>
-
 <div class="viewer">
 <span id="modalPrev" class="nav">&#10094;</span>
 <img id="modalMainImg" src="" alt="Property image">
 <span id="modalNext" class="nav">&#10095;</span>
 <div class="caption" id="modalCaption"></div>
 </div>
-
 <div class="thumbs" id="modalThumbs"></div>
 </div>
 </div>
@@ -782,11 +838,10 @@ scroll-behavior: smooth;
 <p>Located at 1551 Oro Dam Blvd W, our property features multiple fully-furnished units perfect for individual professionals or teams.</p>
 </div>
 
-<!-- Property Cards -->
 <div class="property-grid">
-<!-- Front House -->
+<!-- Front House Card -->
 <div class="property-card">
-<div class="property-image" style="height: 400px; background-image: url('https://i.ibb.co/TxkXXK00/oro-dam-front-home.jpg');">
+<div class="property-image" style="background-image: url('https://i.ibb.co/TxkXXK00/oro-dam-front-home.jpg');">
 <span class="status-badge status-available">All Rooms Available</span>
 </div>
 <div class="property-content">
@@ -825,41 +880,11 @@ scroll-behavior: smooth;
 </tr>
 </thead>
 <tbody>
-<tr>
-<td><strong>Front House</strong></td>
-<td>Bedroom 1</td>
-<td>$800</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Shared bath, includes all utilities</td>
-</tr>
-<tr>
-<td><strong>Front House</strong></td>
-<td>Bedroom 2</td>
-<td>$800</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Shared bath, includes all utilities</td>
-</tr>
-<tr>
-<td><strong>Front House</strong></td>
-<td>Bedroom 3</td>
-<td>$800</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Shared bath, includes all utilities</td>
-</tr>
-<tr>
-<td><strong>Front House</strong></td>
-<td>Bedroom 4</td>
-<td>$800</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Shared bath, all utilities included</td>
-</tr>
-<tr>
-<td><strong>Front House</strong></td>
-<td>Bedroom 5</td>
-<td>$800</td>
-<td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td>
-<td>Shared bath, all utilities included</td>
-</tr>
+<tr><td><strong>Front House</strong></td><td>Bedroom 1</td><td>$800</td><td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td><td>Shared bath, includes all utilities</td></tr>
+<tr><td><strong>Front House</strong></td><td>Bedroom 2</td><td>$800</td><td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td><td>Shared bath, includes all utilities</td></tr>
+<tr><td><strong>Front House</strong></td><td>Bedroom 3</td><td>$800</td><td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td><td>Shared bath, includes all utilities</td></tr>
+<tr><td><strong>Front House</strong></td><td>Bedroom 4</td><td>$800</td><td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td><td>Shared bath, includes all utilities</td></tr>
+<tr><td><strong>Front House</strong></td><td>Bedroom 5</td><td>$800</td><td><span class="status-available" style="padding: 0.2rem 0.5rem; border-radius: 3px;">Available</span></td><td>Shared bath, includes all utilities</td></tr>
 </tbody>
 </table>
 </div>
@@ -874,53 +899,12 @@ scroll-behavior: smooth;
 </div>
 
 <div class="amenities-grid">
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-wifi"></i>
-</div>
-<h3>High-Speed Internet</h3>
-<p>Reliable unlimited high-speed internet.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-utensils"></i>
-</div>
-<h3>Fully Furnished</h3>
-<p>Complete furniture package including kitchenware, linens, and all essentials.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-tools"></i>
-</div>
-<h3>Utility Management</h3>
-<p>All utilities included: electricity, water, gas, trash, and recycling.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-shield-alt"></i>
-</div>
-<h3>Secure Property</h3>
-<p>Well-lit property with secure access.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-parking"></i>
-</div>
-<h3>Ample Parking</h3>
-<p>Dedicated parking spaces for multiple vehicles and work trucks.</p>
-</div>
-
-<div class="amenity-item">
-<div class="amenity-icon">
-<i class="fas fa-concierge-bell"></i>
-</div>
-<h3>Flexible Terms</h3>
-<p>Month-to-month or extended leases with flexible check-in/check-out.</p>
-</div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-wifi"></i></div><h3>High-Speed Internet</h3><p>Reliable unlimited high-speed internet.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-utensils"></i></div><h3>Fully Furnished</h3><p>Complete furniture package including kitchenware, linens, and all essentials.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-tools"></i></div><h3>Utility Management</h3><p>All utilities included: electricity, water, gas, trash, and recycling.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-shield-alt"></i></div><h3>Secure Property</h3><p>Well-lit property with secure access.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-parking"></i></div><h3>Ample Parking</h3><p>Dedicated parking spaces for multiple vehicles and work trucks.</p></div>
+<div class="amenity-item"><div class="amenity-icon"><i class="fas fa-concierge-bell"></i></div><h3>Flexible Terms</h3><p>Month-to-month or extended leases with flexible check-in/check-out.</p></div>
 </div>
 </div>
 </section>
@@ -938,91 +922,23 @@ scroll-behavior: smooth;
 <h3>Get in Touch</h3>
 <p>We understand the unique needs of lineman students and traveling professionals and offer flexible leasing terms tailored to project durations.</p>
 
-<div class="contact-detail">
-<i class="fas fa-phone-alt"></i>
-<div>
-<strong>Phone</strong>
-<p>(530)990-3382</p>
-</div>
-</div>
-
-<div class="contact-detail">
-<i class="fas fa-envelope"></i>
-<div>
-<strong>Email</strong>
-<p>denalhub@hotmail.com</p>
-</div>
-</div>
-
-<div class="contact-detail">
-<i class="fas fa-map-marker-alt"></i>
-<div>
-<strong>Location</strong>
-<p>1551 Oro Dam Blvd W, Oroville California</p>
-</div>
-</div>
-
-<div class="contact-detail">
-<i class="fas fa-clock"></i>
-<div>
-<strong>Response Time</strong>
-<p>We respond to all inquiries within 24 hours, 7 days a week.</p>
-</div>
-</div>
+<div class="contact-detail"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><p>(530)990-3382</p></div></div>
+<div class="contact-detail"><i class="fas fa-envelope"></i><div><strong>Email</strong><p>denalhub@hotmail.com</p></div></div>
+<div class="contact-detail"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><p>1551 Oro Dam Blvd W, Oroville California</p></div></div>
+<div class="contact-detail"><i class="fas fa-clock"></i><div><strong>Response Time</strong><p>We respond to all inquiries within 24 hours, 7 days a week.</p></div></div>
 </div>
 
 <form action="https://formsubmit.co/denalhub@hotmail.com" method="POST">
-<input type="hidden" name="_subject" value="New Housing Inquiry">
+<input type="hidden" name="_subject" value="New Housing Inquiry - Oro Dam">
 <input type="hidden" name="template" value="table">
-<div class="form-group">
-<label for="name">Full Name</label>
-<input type="text" id="name" name="name" required>
-</div>
-
-<div class="form-group">
-<label for="email">Email Address</label>
-<input type="email" id="email" name="email" required>
-</div>
-
-<div class="form-group">
-<label for="phone">Phone Number</label>
-<input type="tel" id="phone" name="phone" required>
-</div>
-
-<div class="form-group">
-<label for="property">Property Interest</label>
-<select id="property" name="property" required>
-<option value="14th">1134 14th Street</option>
-<option value="oro" selected>1551 Oro Dam Blvd W</option>
-<option value="service">28 Service Street</option>
-</select>
-</div>
-
-<div class="form-group">
-<label for="unit">Unit/Room Interest</label>
-<select id="unit" name="unit" required>
-<option value="" disabled selected>Select preferred accommodation</option>
-<option value="front">Front House Room ($800/month)</option>
-<option value="back-master">Back House Master Suite ($1100/month)</option>
-<option value="back-medium">Back House Medium Room ($800/month)</option>
-<option value="back-small">Back House Small Room ($750/month)</option>
-<option value="tiny">Tiny Home ($1400/month)</option>
-</select>
-</div>
-
-<div class="form-group">
-<label for="dates">Preferred Dates / Duration</label>
-<input type="text" id="dates" name="dates" placeholder="e.g., March 15 - June 30, 2024" required>
-</div>
-
-<div class="form-group">
-<label for="message">Additional Information</label>
-<textarea id="message" name="message" placeholder="Tell us about your crew size, special requirements, or any questions..."></textarea>
-</div>
-
-<button type="submit" class="button button-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">
-<i class="fas fa-paper-plane"></i> Submit Request
-</button>
+<div class="form-group"><label for="name">Full Name</label><input type="text" id="name" name="name" required></div>
+<div class="form-group"><label for="email">Email Address</label><input type="email" id="email" name="email" required></div>
+<div class="form-group"><label for="phone">Phone Number</label><input type="tel" id="phone" name="phone" required></div>
+<div class="form-group"><label for="property">Property Interest</label><select id="property" name="property" required><option value="14th">1134 14th Street</option><option value="oro" selected>1551 Oro Dam Blvd W</option><option value="service">28 Service Street</option></select></div>
+<div class="form-group"><label for="unit">Unit/Room Interest</label><select id="unit" name="unit" required><option value="" disabled selected>Select preferred accommodation</option><option value="front">Front House Room ($800/month)</option></select></div>
+<div class="form-group"><label for="dates">Preferred Dates / Duration</label><input type="text" id="dates" name="dates" placeholder="e.g., March 15 - June 30, 2024" required></div>
+<div class="form-group"><label for="message">Additional Information</label><textarea id="message" name="message" placeholder="Tell us about your crew size, special requirements, or any questions..."></textarea></div>
+<button type="submit" class="button button-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;"><i class="fas fa-paper-plane"></i> Submit Request</button>
 </form>
 </div>
 </div>
@@ -1032,34 +948,11 @@ scroll-behavior: smooth;
 <footer>
 <div class="container">
 <div class="footer-container">
-<div class="footer-about">
-<div class="footer-logo">
-<i class="fas fa-home"></i> Lineman Student Housing
+<div class="footer-about"><div class="footer-logo"><i class="fas fa-home"></i> Lineman Student Housing</div><p>Providing premium, fully-furnished housing solutions for lineman students and traveling professionals throughout California.</p></div>
+<div class="footer-links"><h4>Our Properties</h4><ul><li><a href="index.html">1134 14th Street</a></li><li><a href="oro-dam.html">1551 Oro Dam Blvd W</a></li><li><a href="service-street.html">28 Service Street</a></li><li><a href="#contact">Contact</a></li></ul></div>
+<div class="footer-contact"><h4>Contact Info</h4><p><i class="fas fa-phone-alt"></i> (530)990-3382</p><p><i class="fas fa-envelope"></i> denalhub@hotmail.com</p><p><i class="fas fa-map-marker-alt"></i> Multiple California Locations</p></div>
 </div>
-<p>Providing premium, fully-furnished housing solutions for lineman students and traveling professionals throughout California.</p>
-</div>
-
-<div class="footer-links">
-<h4>Our Properties</h4>
-<ul>
-<li><a href="index.html">1134 14th Street</a></li>
-<li><a href="oro-dam.html">1551 Oro Dam Blvd W</a></li>
-<li><a href="service-street.html">28 Service Street</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
-
-<div class="footer-contact">
-<h4>Contact Info</h4>
-<p><i class="fas fa-phone-alt"></i> (530)990-3382</p>
-<p><i class="fas fa-envelope"></i> denalhub@hotmail.com</p>
-<p><i class="fas fa-map-marker-alt"></i> Multiple California Locations</p>
-</div>
-</div>
-
-<div class="copyright">
-<p>Designed for lineman students and traveling professionals</p>
-</div>
+<div class="copyright"><p>© 2025 Premier NLC Lineman Housing of Oroville | Designed for lineman students and traveling professionals</p></div>
 </div>
 </footer>
 
@@ -1095,7 +988,6 @@ img.classList.toggle("active", idx === index);
 }
 }
 
-// Build thumbnails inside modal
 if (thumbs) {
 slides.forEach((slide, i) => {
 const img = document.createElement("img");
@@ -1106,34 +998,19 @@ thumbs.appendChild(img);
 });
 }
 
-// Modal navigation
 document.getElementById("modalPrev")?.addEventListener("click", () => loadSlide(index - 1));
 document.getElementById("modalNext")?.addEventListener("click", () => loadSlide(index + 1));
 
-// Modal open/close logic
 const modal = document.getElementById("tourModal");
 const openBtn = document.getElementById("openTourBtn");
 const closeBtn = document.querySelector(".close-modal");
 
-openBtn.onclick = function() {
-modal.style.display = "block";
-loadSlide(0); // reset to first image when opened
-}
-
-closeBtn.onclick = function() {
-modal.style.display = "none";
-}
-
-window.onclick = function(event) {
-if (event.target == modal) {
-modal.style.display = "none";
-}
-}
+if(openBtn) openBtn.onclick = function() { modal.style.display = "block"; loadSlide(0); }
+if(closeBtn) closeBtn.onclick = function() { modal.style.display = "none"; }
+window.onclick = function(event) { if (event.target == modal) modal.style.display = "none"; }
 })();
-</script>
 
-<!-- Smooth scroll -->
-<script>
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 anchor.addEventListener('click', function(e) {
 e.preventDefault();
